@@ -17,7 +17,9 @@ class CareerResource extends Resource
 {
     protected static ?string $model = Career::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?int $navigationSort = 9;
+    protected static ?string $navigationIcon = 'heroicon-o-calendar';
+    protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
     {
@@ -80,14 +82,14 @@ class CareerResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -95,5 +97,5 @@ class CareerResource extends Resource
             'create' => Pages\CreateCareer::route('/create'),
             'edit' => Pages\EditCareer::route('/{record}/edit'),
         ];
-    }    
+    }
 }

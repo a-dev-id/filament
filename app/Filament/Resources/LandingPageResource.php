@@ -17,6 +17,8 @@ class LandingPageResource extends Resource
 {
     protected static ?string $model = LandingPage::class;
 
+    protected static ?int $navigationSort = 12;
+    protected static ?string $navigationGroup = 'Advance';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
@@ -80,14 +82,14 @@ class LandingPageResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -95,5 +97,5 @@ class LandingPageResource extends Resource
             'create' => Pages\CreateLandingPage::route('/create'),
             'edit' => Pages\EditLandingPage::route('/{record}/edit'),
         ];
-    }    
+    }
 }

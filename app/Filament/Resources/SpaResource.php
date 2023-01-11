@@ -30,6 +30,7 @@ class SpaResource extends Resource
 
     protected static ?int $navigationSort = 5;
     protected static ?string $navigationIcon = 'heroicon-o-hand';
+    protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
     {

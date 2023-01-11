@@ -17,7 +17,9 @@ class AwardResource extends Resource
 {
     protected static ?string $model = Award::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?int $navigationSort = 7;
+    protected static ?string $navigationIcon = 'heroicon-o-gift';
+    protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
     {
@@ -80,14 +82,14 @@ class AwardResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -95,5 +97,5 @@ class AwardResource extends Resource
             'create' => Pages\CreateAward::route('/create'),
             'edit' => Pages\EditAward::route('/{record}/edit'),
         ];
-    }    
+    }
 }

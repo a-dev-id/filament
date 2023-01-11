@@ -17,6 +17,8 @@ class PopUpResource extends Resource
 {
     protected static ?string $model = PopUp::class;
 
+    protected static ?int $navigationSort = 13;
+    protected static ?string $navigationGroup = 'Advance';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
@@ -80,14 +82,14 @@ class PopUpResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -95,5 +97,5 @@ class PopUpResource extends Resource
             'create' => Pages\CreatePopUp::route('/create'),
             'edit' => Pages\EditPopUp::route('/{record}/edit'),
         ];
-    }    
+    }
 }

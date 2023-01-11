@@ -17,7 +17,9 @@ class PressRoomResource extends Resource
 {
     protected static ?string $model = PressRoom::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?int $navigationSort = 11;
+    protected static ?string $navigationIcon = 'heroicon-o-video-camera';
+    protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
     {
@@ -80,14 +82,14 @@ class PressRoomResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -95,5 +97,5 @@ class PressRoomResource extends Resource
             'create' => Pages\CreatePressRoom::route('/create'),
             'edit' => Pages\EditPressRoom::route('/{record}/edit'),
         ];
-    }    
+    }
 }

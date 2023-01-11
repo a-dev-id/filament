@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ExperienceResource\Pages;
-use App\Filament\Resources\ExperienceResource\RelationManagers\ImagesRelationManager;
-use App\Models\Experience;
+use App\Filament\Resources\OfferResource\Pages;
+use App\Filament\Resources\OfferResource\RelationManagers;
+use App\Filament\Resources\OfferResource\RelationManagers\ImagesRelationManager;
+use App\Models\Offer;
 use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -23,12 +24,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
-class ExperienceResource extends Resource
+class OfferResource extends Resource
 {
-    protected static ?string $model = Experience::class;
+    protected static ?string $model = Offer::class;
 
-    protected static ?int $navigationSort = 3;
-    protected static ?string $navigationIcon = 'heroicon-o-globe';
+    protected static ?int $navigationSort = 10;
+    protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -151,9 +152,9 @@ class ExperienceResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListExperiences::route('/'),
-            'create' => Pages\CreateExperience::route('/create'),
-            'edit' => Pages\EditExperience::route('/{record}/edit'),
+            'index' => Pages\ListOffers::route('/'),
+            'create' => Pages\CreateOffer::route('/create'),
+            'edit' => Pages\EditOffer::route('/{record}/edit'),
         ];
     }
 }

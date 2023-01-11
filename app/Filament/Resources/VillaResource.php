@@ -34,6 +34,7 @@ class VillaResource extends Resource
 
     protected static ?int $navigationSort = 1;
     protected static ?string $navigationIcon = 'heroicon-s-home';
+    protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
     {

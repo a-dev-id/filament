@@ -30,6 +30,7 @@ class DiningResource extends Resource
 
     protected static ?int $navigationSort = 4;
     protected static ?string $navigationIcon = 'heroicon-o-beaker';
+    protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
     {
