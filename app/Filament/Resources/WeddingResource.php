@@ -28,7 +28,7 @@ class WeddingResource extends Resource
 {
     protected static ?string $model = Wedding::class;
 
-    protected static ?int $navigationSort = 6;
+    protected static ?int $navigationSort = 7;
     protected static ?string $navigationIcon = 'heroicon-o-heart';
     protected static ?string $navigationGroup = 'General';
 

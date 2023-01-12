@@ -17,7 +17,7 @@ class PopUpResource extends Resource
 {
     protected static ?string $model = PopUp::class;
 
-    protected static ?int $navigationSort = 13;
+    protected static ?int $navigationSort = 14;
     protected static ?string $navigationGroup = 'Advance';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 

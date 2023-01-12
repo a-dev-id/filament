@@ -28,7 +28,7 @@ class SpaResource extends Resource
 {
     protected static ?string $model = Spa::class;
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 6;
     protected static ?string $navigationIcon = 'heroicon-o-hand';
     protected static ?string $navigationGroup = 'General';
 

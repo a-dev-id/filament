@@ -27,7 +27,7 @@ class ExperienceResource extends Resource
 {
     protected static ?string $model = Experience::class;
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 4;
     protected static ?string $navigationIcon = 'heroicon-o-globe';
     protected static ?string $navigationGroup = 'General';
 

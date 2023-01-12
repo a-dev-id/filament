@@ -28,7 +28,7 @@ class DiningResource extends Resource
 {
     protected static ?string $model = Dining::class;
 
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 5;
     protected static ?string $navigationIcon = 'heroicon-o-beaker';
     protected static ?string $navigationGroup = 'General';
 

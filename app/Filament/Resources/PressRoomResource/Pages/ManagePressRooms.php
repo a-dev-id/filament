@@ -4,16 +4,16 @@ namespace App\Filament\Resources\PressRoomResource\Pages;
 
 use App\Filament\Resources\PressRoomResource;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ManageRecords;
 
-class EditPressRoom extends EditRecord
+class ManagePressRooms extends ManageRecords
 {
     protected static string $resource = PressRoomResource::class;
 
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\CreateAction::make(),
         ];
     }
 }
