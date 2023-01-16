@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers;
+use App\Filament\Resources\PageResource\RelationManagers\CustomFieldsRelationManager;
 use App\Models\Page;
 use Closure;
 use Filament\Forms;
@@ -144,7 +145,7 @@ class PageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CustomFieldsRelationManager::class,
         ];
     }
 

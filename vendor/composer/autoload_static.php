@@ -710,6 +710,7 @@ class ComposerStaticInit0c6cd6dc64b35f3fceedd176f92b5c0f
         'App\\Models\\Blog' => __DIR__ . '/../..' . '/app/Models/Blog.php',
         'App\\Models\\Career' => __DIR__ . '/../..' . '/app/Models/Career.php',
         'App\\Models\\CssScript' => __DIR__ . '/../..' . '/app/Models/CssScript.php',
+        'App\\Models\\CustomField' => __DIR__ . '/../..' . '/app/Models/CustomField.php',
         'App\\Models\\Dining' => __DIR__ . '/../..' . '/app/Models/Dining.php',
         'App\\Models\\DiningImage' => __DIR__ . '/../..' . '/app/Models/DiningImage.php',
         'App\\Models\\Experience' => __DIR__ . '/../..' . '/app/Models/Experience.php',

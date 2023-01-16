@@ -88,6 +88,7 @@ return array(
     'App\\Models\\Blog' => $baseDir . '/app/Models/Blog.php',
     'App\\Models\\Career' => $baseDir . '/app/Models/Career.php',
     'App\\Models\\CssScript' => $baseDir . '/app/Models/CssScript.php',
+    'App\\Models\\CustomField' => $baseDir . '/app/Models/CustomField.php',
     'App\\Models\\Dining' => $baseDir . '/app/Models/Dining.php',
     'App\\Models\\DiningImage' => $baseDir . '/app/Models/DiningImage.php',
     'App\\Models\\Experience' => $baseDir . '/app/Models/Experience.php',
