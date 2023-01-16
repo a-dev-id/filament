@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('villa_images', function (Blueprint $table) {
             $table->id();
             $table->integer('villa_id');
-            $table->string('title');
-            $table->text('image');
+            $table->string('title')->nullable();
+            $table->text('image')->nullable();
             $table->integer('is_active');
             $table->timestamps();
         });

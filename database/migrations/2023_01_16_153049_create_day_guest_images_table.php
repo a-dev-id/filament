@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('experience_images', function (Blueprint $table) {
+        Schema::create('day_guest_images', function (Blueprint $table) {
             $table->id();
-            $table->integer('experience_id');
+            $table->integer('day_guest_id');
             $table->string('title')->nullable();
             $table->text('image')->nullable();
             $table->integer('is_active');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('experience_images');
+        Schema::dropIfExists('day_guest_images');
     }
 };
