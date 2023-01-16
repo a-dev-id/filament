@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('comment');
-            $table->string('name');
-            $table->integer('star');
-            $table->string('source');
-            $table->string('link');
-            $table->longText('avatar');
-            $table->date('date');
+            $table->longText('comment')->nullable();
+            $table->string('name')->nullable();
+            $table->integer('star')->nullable();
+            $table->string('source')->nullable();
+            $table->string('link')->nullable();
+            $table->longText('avatar')->nullable();
+            $table->date('date')->nullable();
+            $table->integer('is_active');
             $table->timestamps();
         });
     }
