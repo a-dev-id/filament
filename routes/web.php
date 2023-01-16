@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+// desktop
+Route::resource('/', App\Http\Controllers\Desktop\HomeController::class);
+
+
+
+// mobile
+Route::resource('/m', App\Http\Controllers\Mobile\HomeController::class);
