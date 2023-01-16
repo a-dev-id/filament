@@ -47,7 +47,7 @@ class PressRoomResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('cover_image')->label('Image'),
-                TextColumn::make('Title'),
+                TextColumn::make('title')->searchable()->sortable(),
                 IconColumn::make('is_active')->label('Published')
                     ->options([
                         'heroicon-o-x-circle' => 0,

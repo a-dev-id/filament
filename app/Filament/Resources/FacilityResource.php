@@ -45,7 +45,7 @@ class FacilityResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title'),
+                TextColumn::make('title')->sortable()->searchable(),
                 ImageColumn::make('icon')->square(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime('d M Y'),

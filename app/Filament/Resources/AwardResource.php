@@ -48,7 +48,7 @@ class AwardResource extends Resource
         return $table
             ->columns([
                 ImageColumn::make('cover_image')->label('Image'),
-                TextColumn::make('title'),
+                TextColumn::make('title')->searchable(),
                 IconColumn::make('is_active')->label('Published')
                     ->options([
                         'heroicon-o-x-circle' => 0,

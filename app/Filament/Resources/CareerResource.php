@@ -52,7 +52,7 @@ class CareerResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('Title'),
+                TextColumn::make('title')->searchable()->sortable(),
                 IconColumn::make('is_active')->label('Published')
                     ->options([
                         'heroicon-o-x-circle' => 0,
