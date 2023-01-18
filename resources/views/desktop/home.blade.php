@@ -1,17 +1,16 @@
 @section('meta')
-<meta name="title" content="Nandini Jungle Resort &amp; Spa">
-<meta name="description" content="A dramatic hideaway nestled in the heart of rainforest Payangan - Ubud, Nandini Jungle Resort and Spa is a captivating destination resort that blends smoothly with its natural surroundings, Situated on the mystical Ayung River, each villa enjoys the embrace of the lush rainforest and offers stunning views from private balcony of the breathtaking Ayung gorge, Reconnect with nature, rekindle your spirit and reignite your Soul in this serene nature haven">
-<title>Nandini Jungle Resort &amp; Spa</title>
-<meta name="facebook-domain-verification" content="rerz081jusogdfqlqc5stbcd0mfyia" />
-<meta property="og:url" content="https://nandinibali.com">
+<meta name="title" content="{{$setting->meta_title}}">
+<meta name="description" content="{{$setting->meta_description}}">
+<title>{{$setting->meta_title}}</title>
+<meta property="og:url" content="{{route('index')}}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nandini Jungle Resort &amp; Spa | Nandini Bali">
-<meta property="og:description" content="A dramatic hideaway nestled in the heart of rainforest Payangan - Ubud, Nandini Jungle Resort and Spa is a captivating destination resort that blends smoothly with its natural surroundings, Situated on the mystical Ayung River, each villa enjoys the embrace of the lush rainforest and offers stunning views from private balcony of the breathtaking Ayung gorge, Reconnect with nature, rekindle your spirit and reignite your Soul in this serene nature haven">
-<meta property="og:image" content="https://nandinibali.com/themes/mindimedia/assets/images/contact.jpg">
+<meta property="og:title" content="{{$setting->meta_title}}">
+<meta property="og:description" content="{{$setting->meta_description}}">
+<meta property="og:image" content="{{asset('storage/'.$setting->banner_image)}}">
 
-<meta property="twitter:title" content="Nandini Jungle Resort &amp; Spa | Nandini Bali">
-<meta name="twitter:description" content="A dramatic hideaway nestled in the heart of rainforest Payangan - Ubud, Nandini Jungle Resort and Spa is a captivating destination resort that blends smoothly with its natural surroundings, Situated on the mystical Ayung River, each villa enjoys the embrace of the lush rainforest and offers stunning views from private balcony of the breathtaking Ayung gorge, Reconnect with nature, rekindle your spirit and reignite your Soul in this serene nature haven">
-<meta name="twitter:image" content="https://nandinibali.com/themes/mindimedia/assets/images/contact.jpg">
+<meta property="twitter:title" content="{{$setting->meta_title}}">
+<meta name="twitter:description" content="{{$setting->meta_description}}">
+<meta name="twitter:image" content="{{asset('storage/'.$setting->banner_image)}}">
 @endsection
 
 @push('css')
@@ -103,17 +102,74 @@
 @endpush
 
 <x-desktop>
+    <!-- Modal -->
+    <div class="modal fade" id="BannerPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: white; border-radius: 0px!important; top: 100px;">
+                <div class="modal-body p-0">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+
+                            <a href="https://www.nandinibali.com/blog/post/night-us">
+                                <img class="img-fluid w-100" src="https://nandinibali.com/storage/app/media/year-rabbit-nandini.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OLD Modal
+    <div class="modal fade" id="BannerPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content" style="background-color: white; border-radius: 0px!important; top: 70px;">
+          <div class="modal-body pb-4">
+    
+            <div class="row">
+              <div class="col-md-12 text-center mb-4">
+                <img class="" src="https://www.nandinibali.com/themes/mindimedia/assets/images/green-logo.png" style="max-width: 180px; margin-bottom:10px;" >
+                <img class="" src="https://www.nandinibali.com/storage/app/media/DASHING%20WONDERLAND.jpg" style="max-width: 100%;" >
+              </div>
+              <div class="col-md-12 text-center fs-3">
+                <h3 class="">TIS THE SEASON TO CELEBRATE</h3>
+                <p class="mb-3" style="font-size: 16px;">
+                    Following the 2022 theme of HGI, The Wondrous Journey,<br>
+                    this festive season, Nandini Jungle Resort & Spa will cast a Dashing Wonderland all over the resort, offering an array of a remarkable experiences blends with  
+                    a flavourful culinary journey offering by HGI Corporate Executive Chef Ridwan Hakim, <br>
+                    starting from Dec 20, 2022 until Jan 8, 2023<br>
+                </p>
+                <a class="btn btn-default text-decoration-none fs-5" href="https://www.nandinibali.com/blog/post/dashing-wonderland-nandini-jungle-resort-spa-bali" target="blank" style="background-color:#6ea027; color:white">VIEW DETAIL</a>
+              </div>
+            </div>
+    
+            <div class="row">
+              <div class="col-md-12 text-center mb-2">
+                <img class="" src="https://nandinibali.com/themes/mindimedia/assets/images/stay-4-pay-3.png" style="max-width: 100%" >
+              </div>
+              <div class="col-md-12 text-center fs-3">
+                <h3 class="">Stay Pay Deals </h3>
+                <p class="mb-4" style="font-size: 16px;">Stay longer with us and Enjoy one night on us. <br> *minimum 3 nights</p>
+                <a class="btn btn-default text-decoration-none fs-5" href="https://nandinibali.com/offers" style="background-color:#6ea027; color:white">Learn More</a>
+              </div>
+            </div>
+    
+          </div>    
+        </div>
+      </div>
+    </div> -->
+
     <section class="vh-100 overflow-hidden position-relative">
-        <iframe src="https://www.youtube.com/embed/jot-1ANRZ-s?autoplay=1&mute=1&controls=0&loop=1&rel=0&showinfo=0&iv_load_policy=3&playlist=jot-1ANRZ-s" class="header-iframe-youtube"></iframe>
+        <iframe src="{{$setting->button_link}}" class="header-iframe-youtube"></iframe>
     </section>
 
     <section class="py-90 bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="fw-bold text-uppercase mb-2">Nandini<br></h1>
-                    <h4 class=" mb-5 underline">Discover a Luxury Jungle Experience</h4>
-                    <p>A dramatic hideaway nestled in the heart of the Payangan rainforest - Ubud, Nandini Jungle Resort and Spa is a captivating destination that blends smoothly with its natural surroundings. Situated on the mystical Ayung River, each villa enjoys the embrace of a lush rainforest and offers stunning views from your own private balcony of the breathtaking Ayung gorge. Reconnect with nature, rekindle your spirit and reignite your soul in this serene nature haven.</p>
+                    <h1 class="fw-bold text-uppercase mb-2">{{$setting->title}}<br></h1>
+                    <h4 class=" mb-5 underline">{{$setting->subtitle}}</h4>
+                    {!! $setting->description !!}
                 </div>
             </div>
         </div>
@@ -125,30 +181,14 @@
                 <div class="col-12 border border-secondary py-5 position-relative" id="advantages-slides">
                     <small class="position-absolute top-0 bg-primary fw-bold text-white text-uppercase py-1 px-2">Advantages of Booking</small>
                     <div class="sliders px-4 d-flex justify-content-center align-items-center">
+
+                        @foreach ($setting->CustomFields as $data)
                         <div class="border-end border-primary px-5 d-flex flex-column align-items-start justify-content-center h-100px">
-                            <p class="fw-bold mb-2">VIP Treatment</p>
-                            <p class="text-primary mb-0 small">on arrival</p>
+                            <p class="fw-bold mb-2">{{$data->title}}</p>
+                            <p class="text-primary mb-0 small">{{$data->excerpt}}</p>
                         </div>
-                        <div class="border-end border-primary px-5 d-flex flex-column align-items-start justify-content-center h-100px">
-                            <p class="fw-bold mb-2">Fresh Tropical fruits</p>
-                            <p class="text-primary mb-0 small">replenished each day</p>
-                        </div>
-                        <div class="border-end border-primary px-5 d-flex flex-column align-items-start justify-content-center h-100px">
-                            <p class="fw-bold mb-2">Early check in and late check out</p>
-                            <p class="text-primary mb-0 small">subject to availability</p>
-                        </div>
-                        <div class="border-end border-primary px-5 d-flex flex-column align-items-start justify-content-center h-100px">
-                            <p class="fw-bold mb-2">Shuttle service to Ubud Town</p>
-                            <p class="text-primary mb-0 small">on scheduled</p>
-                        </div>
-                        <div class="border-end border-primary px-5 d-flex flex-column align-items-start justify-content-center h-100px">
-                            <p class="fw-bold mb-2">Turn down service</p>
-                            <p class="text-primary mb-0 small">daily basis</p>
-                        </div>
-                        <div class="border-end border-primary px-5 d-flex flex-column align-items-start justify-content-center h-100px">
-                            <p class="fw-bold mb-2">Bathrobe and slippers</p>
-                            <p class="text-primary mb-0 small">in the villas</p>
-                        </div>
+                        @endforeach
+
                     </div>
                     <div class="box-arrows position-absolute start-0 w-100 px-3"></div>
                 </div>

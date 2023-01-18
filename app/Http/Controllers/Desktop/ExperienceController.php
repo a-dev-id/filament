@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Desktop;
 
 use App\Http\Controllers\Controller;
+use App\Models\Experience;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ExperienceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '1')->first();
-        return view('desktop.home')->with(compact('setting'));
+        $setting = Page::where('is_active', '1')->where('id', '3')->first();
+        $experience_list = Experience::where('is_active', '1')->get();
+        return view('desktop.experience')->with(compact('setting', 'experience_list'));
     }
 
     /**

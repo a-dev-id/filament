@@ -17,7 +17,7 @@ class PageImage extends Model
         'is_active',
     ];
 
-    public function dining(): BelongsTo
+    public function page(): BelongsTo
     {
         return $this->belongsTo(Page::class);
     }

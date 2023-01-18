@@ -29,6 +29,7 @@ class ImagesRelationManager extends RelationManager
                     ->maxLength(255),
                 FileUpload::make('image'),
                 Toggle::make('is_active')
+                    ->label('Publish')
                     ->offColor('secondary')
                     ->onColor('primary')
                     ->inline(false)

@@ -104,7 +104,7 @@
             <div class="container-fluid justify-content-center text-uppercase">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a href="{{route('index')}}" class="nav-link text-white px-2 px-xl-3"><i class="fa fa-home"></i></a></li>
-                    <li class="nav-item"><a href="{{route('index')}}/suites-villas" class="nav-link text-white px-2 px-xl-3">Suites &amp; Villas</a></li>
+                    <li class="nav-item"><a href="{{route('suites-villas.index')}}" class="nav-link text-white px-2 px-xl-3">Suites &amp; Villas</a></li>
                     <li class="nav-item"><a href="{{route('index')}}/experiences" class="nav-link text-white px-2 px-xl-3">Experiences</a></li>
                     <li class="nav-item"><a href="{{route('index')}}/dining" class="nav-link text-white px-2 px-xl-3">Dining</a></li>
                 </ul>
@@ -178,70 +178,8 @@
         </div>
     </header>
 
-    <!-- Content -->
-    <!-- Modal -->
-    <div class="modal fade" id="BannerPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background-color: white; border-radius: 0px!important; top: 100px;">
-                <div class="modal-body p-0">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-
-                            <a href="https://www.nandinibali.com/blog/post/night-us">
-                                <img class="img-fluid w-100" src="https://nandinibali.com/storage/app/media/year-rabbit-nandini.jpg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- OLD Modal
-    <div class="modal fade" id="BannerPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content" style="background-color: white; border-radius: 0px!important; top: 70px;">
-          <div class="modal-body pb-4">
-    
-            <div class="row">
-              <div class="col-md-12 text-center mb-4">
-                <img class="" src="https://www.nandinibali.com/themes/mindimedia/assets/images/green-logo.png" style="max-width: 180px; margin-bottom:10px;" >
-                <img class="" src="https://www.nandinibali.com/storage/app/media/DASHING%20WONDERLAND.jpg" style="max-width: 100%;" >
-              </div>
-              <div class="col-md-12 text-center fs-3">
-                <h3 class="">TIS THE SEASON TO CELEBRATE</h3>
-                <p class="mb-3" style="font-size: 16px;">
-                    Following the 2022 theme of HGI, The Wondrous Journey,<br>
-                    this festive season, Nandini Jungle Resort & Spa will cast a Dashing Wonderland all over the resort, offering an array of a remarkable experiences blends with  
-                    a flavourful culinary journey offering by HGI Corporate Executive Chef Ridwan Hakim, <br>
-                    starting from Dec 20, 2022 until Jan 8, 2023<br>
-                </p>
-                <a class="btn btn-default text-decoration-none fs-5" href="https://www.nandinibali.com/blog/post/dashing-wonderland-nandini-jungle-resort-spa-bali" target="blank" style="background-color:#6ea027; color:white">VIEW DETAIL</a>
-              </div>
-            </div>
-    
-            <div class="row">
-              <div class="col-md-12 text-center mb-2">
-                <img class="" src="https://nandinibali.com/themes/mindimedia/assets/images/stay-4-pay-3.png" style="max-width: 100%" >
-              </div>
-              <div class="col-md-12 text-center fs-3">
-                <h3 class="">Stay Pay Deals </h3>
-                <p class="mb-4" style="font-size: 16px;">Stay longer with us and Enjoy one night on us. <br> *minimum 3 nights</p>
-                <a class="btn btn-default text-decoration-none fs-5" href="https://nandinibali.com/offers" style="background-color:#6ea027; color:white">Learn More</a>
-              </div>
-            </div>
-    
-          </div>    
-        </div>
-      </div>
-    </div> -->
-
-
     {{$slot}}
 
-
-
-    <!-- Footer -->
     <footer>
         <div class="container my-4">
             <div class="row">

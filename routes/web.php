@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 
 // desktop
 Route::resource('/', App\Http\Controllers\Desktop\HomeController::class);
+Route::resource('/suites-villas', App\Http\Controllers\Desktop\VillaController::class);
+Route::resource('/experiences', App\Http\Controllers\Desktop\ExperienceController::class);
+Route::resource('/dining', App\Http\Controllers\Desktop\DiningController::class);
 
 
 

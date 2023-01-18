@@ -3,8 +3,8 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
-use App\Filament\Resources\PageResource\RelationManagers;
 use App\Filament\Resources\PageResource\RelationManagers\CustomFieldsRelationManager;
+use App\Filament\Resources\PageResource\RelationManagers\ImagesRelationManager;
 use App\Models\Page;
 use Closure;
 use Filament\Forms;
@@ -39,6 +39,11 @@ class PageResource extends Resource
                 Grid::make()->schema([
                     Section::make('General')
                         ->schema([
+                            Grid::make(1)->schema([
+                                Forms\Components\TextInput::make('page_name')
+                                    ->required()
+                                    ->maxLength(191),
+                            ]),
                             Grid::make(2)->schema([
                                 Forms\Components\TextInput::make('title')
                                     ->required()
@@ -87,15 +92,17 @@ class PageResource extends Resource
                         ->schema([
                             Grid::make(2)->schema([
                                 Forms\Components\TextInput::make('button_text')
-                                    ->maxLength(191),
+                                    ->maxLength(191)
+                                    ->label('Text'),
                                 Forms\Components\TextInput::make('button_link')
-                                    ->maxLength(191),
+                                    ->maxLength(191)
+                                    ->label('Link'),
                             ]),
-                            Grid::make(2)->schema([
-                                Forms\Components\TextInput::make('price')
-                                    ->maxLength(191),
-                                TextInput::make('per')
-                            ]),
+                            // Grid::make(2)->schema([
+                            //     Forms\Components\TextInput::make('price')
+                            //         ->maxLength(191),
+                            //     TextInput::make('per')
+                            // ]),
                             Grid::make(1)->schema([
                                 Toggle::make('is_active')
                                     ->label('Publish')
@@ -114,6 +121,7 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('page_name')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
                 ImageColumn::make('banner_image')->square(),
                 Tables\Columns\TextColumn::make('is_active')->label('Published'),
@@ -146,6 +154,7 @@ class PageResource extends Resource
     {
         return [
             CustomFieldsRelationManager::class,
+            ImagesRelationManager::class,
         ];
     }
 

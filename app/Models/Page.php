@@ -12,6 +12,7 @@ class Page extends Model
     use HasFactory;
 
     protected $fillable = [
+        'page_name',
         'title',
         'slug',
         'subtitle',

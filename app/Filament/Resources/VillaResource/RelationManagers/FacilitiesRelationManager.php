@@ -30,6 +30,7 @@ class FacilitiesRelationManager extends RelationManager
                     ->maxLength(255),
                 FileUpload::make('icon'),
                 Toggle::make('is_active')
+                    ->label('Publish')
                     ->onColor('primary')
                     ->offColor('secondary')
                     ->inline(false)
@@ -40,15 +41,16 @@ class FacilitiesRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
                 ImageColumn::make('icon')->square(),
+                Tables\Columns\TextColumn::make('title'),
+
             ])
             ->filters([
                 //
             ])
             ->headerActions([
+                Tables\Actions\CreateAction::make(),
                 Tables\Actions\AttachAction::make(),
-                // Tables\Actions\CreateAction::make(),
             ])
             ->actions([
                 DetachAction::make(),

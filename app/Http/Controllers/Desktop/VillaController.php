@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Desktop;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
+use App\Models\Villa;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class VillaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '1')->first();
-        return view('desktop.home')->with(compact('setting'));
+        $setting = Page::where('is_active', '1')->where('id', '2')->first();
+        $villa_list = Villa::where('is_active', '1')->get();
+        return view('desktop.villa')->with(compact('setting', 'villa_list'));
     }
 
     /**
@@ -46,9 +48,11 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $setting = Villa::where('is_active', '1')->where('slug', $slug)->first();
+        $villa_list = Villa::where('is_active', '1')->get();
+        return view('desktop.villa-detail')->with(compact('setting', 'villa_list'));
     }
 
     /**

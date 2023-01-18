@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => "Nandini Jungle by Hanging Gardens",
 
     /*
     |--------------------------------------------------------------------------

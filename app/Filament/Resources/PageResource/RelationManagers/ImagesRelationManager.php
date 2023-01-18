@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\ExperienceResource\RelationManagers;
+namespace App\Filament\Resources\PageResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -29,7 +29,6 @@ class ImagesRelationManager extends RelationManager
                     ->maxLength(255),
                 FileUpload::make('image'),
                 Toggle::make('is_active')
-                    ->label('Publish')
                     ->offColor('secondary')
                     ->onColor('primary')
                     ->inline(false)

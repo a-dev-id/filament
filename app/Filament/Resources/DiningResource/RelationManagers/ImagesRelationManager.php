@@ -29,6 +29,7 @@ class ImagesRelationManager extends RelationManager
                     ->maxLength(255),
                 FileUpload::make('image'),
                 Toggle::make('is_active')
+                    ->label('Publish')
                     ->offColor('secondary')
                     ->onColor('primary')
                     ->inline(false)
@@ -50,6 +51,10 @@ class ImagesRelationManager extends RelationManager
                         'secondary' => 0,
                         'success' => 1,
                     ]),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime('d M Y'),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime('d M Y'),
             ])
             ->filters([
                 //

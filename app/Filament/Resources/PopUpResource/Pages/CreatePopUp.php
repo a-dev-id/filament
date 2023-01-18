@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreatePopUp extends CreateRecord
 {
     protected static string $resource = PopUpResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
