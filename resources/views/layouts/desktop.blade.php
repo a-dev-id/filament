@@ -105,15 +105,15 @@
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a href="{{route('index')}}" class="nav-link text-white px-2 px-xl-3"><i class="fa fa-home"></i></a></li>
                     <li class="nav-item"><a href="{{route('suites-villas.index')}}" class="nav-link text-white px-2 px-xl-3">Suites &amp; Villas</a></li>
-                    <li class="nav-item"><a href="{{route('index')}}/experiences" class="nav-link text-white px-2 px-xl-3">Experiences</a></li>
-                    <li class="nav-item"><a href="{{route('index')}}/dining" class="nav-link text-white px-2 px-xl-3">Dining</a></li>
+                    <li class="nav-item"><a href="{{route('experiences.index')}}" class="nav-link text-white px-2 px-xl-3">Experiences</a></li>
+                    <li class="nav-item"><a href="{{route('dining.index')}}" class="nav-link text-white px-2 px-xl-3">Dining</a></li>
                 </ul>
                 <a href="{{route('index')}}" class="navbar-brand mx-2">
                     <img src="https://nandinibali.com/themes/mindimedia/assets/images/green-logo.png" class="navlogo fade-in">
                 </a>
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a href="{{route('index')}}/spa" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
-                    <li class="nav-item"><a href="{{route('index')}}/weddings" class="nav-link text-white px-2 px-xl-3">Weddings</a></li>
+                    <li class="nav-item"><a href="{{route('spa.index')}}" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
+                    <li class="nav-item"><a href="{{route('weddings.index')}}" class="nav-link text-white px-2 px-xl-3">Weddings</a></li>
                     <li class="nav-item"><a href="{{route('index')}}/gallery" class="nav-link text-white px-2 px-xl-3">Gallery</a></li>
                     <li class="nav-item"><a href="{{route('index')}}/contact-us" class="nav-link text-white px-2 px-xl-3">Contact Us</a></li>
                 </ul>

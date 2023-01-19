@@ -2,7 +2,7 @@
 <meta name="title" content="{{$setting->meta_title}} | Suites & Villas | Nandini Jungle by Hanging Gardens">
 <meta name="description" content="{{$setting->meta_description}}">
 <title>{{$setting->meta_title}}</title>
-<meta property="og:url" content="{{route('index')}}">
+<meta property="og:url" content="{{route('suites-villas.show',[$setting->slug])}}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{$setting->meta_title}} | Suites & Villas | Nandini Jungle by Hanging Gardens">
 <meta property="og:description" content="{{$setting->meta_description}}">

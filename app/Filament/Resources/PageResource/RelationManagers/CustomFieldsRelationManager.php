@@ -13,6 +13,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -65,6 +66,7 @@ class CustomFieldsRelationManager extends RelationManager
     {
         return $table
             ->columns([
+                TextColumn::make('id')->label('ID'),
                 Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('is_active')->label('Published'),
                 IconColumn::make('is_active')->label('Published')

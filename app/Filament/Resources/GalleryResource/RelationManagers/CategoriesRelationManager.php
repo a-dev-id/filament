@@ -1,22 +1,18 @@
 <?php
 
-namespace App\Filament\Resources\WeddingResource\RelationManagers;
+namespace App\Filament\Resources\GalleryResource\RelationManagers;
 
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ImagesRelationManager extends RelationManager
+class CategoriesRelationManager extends RelationManager
 {
-    protected static string $relationship = 'images';
+    protected static string $relationship = 'categories';
 
     protected static ?string $recordTitleAttribute = 'title';
 
@@ -27,12 +23,6 @@ class ImagesRelationManager extends RelationManager
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                FileUpload::make('image'),
-                Toggle::make('is_active')
-                    ->label('Publish')
-                    ->offColor('secondary')
-                    ->onColor('primary')
-                    ->inline(false)
             ]);
     }
 
@@ -41,16 +31,6 @@ class ImagesRelationManager extends RelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title'),
-                ImageColumn::make('image')->square(),
-                IconColumn::make('is_active')->label('Published')
-                    ->options([
-                        'heroicon-o-x-circle' => 0,
-                        'heroicon-o-check-circle' => 1,
-                    ])
-                    ->colors([
-                        'secondary' => 0,
-                        'success' => 1,
-                    ]),
             ])
             ->filters([
                 //
@@ -65,5 +45,5 @@ class ImagesRelationManager extends RelationManager
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
-    }
+    }    
 }

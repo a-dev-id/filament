@@ -24,6 +24,8 @@ Route::resource('/', App\Http\Controllers\Desktop\HomeController::class);
 Route::resource('/suites-villas', App\Http\Controllers\Desktop\VillaController::class);
 Route::resource('/experiences', App\Http\Controllers\Desktop\ExperienceController::class);
 Route::resource('/dining', App\Http\Controllers\Desktop\DiningController::class);
+Route::resource('/spa', App\Http\Controllers\Desktop\SpaController::class);
+Route::resource('/weddings', App\Http\Controllers\Desktop\WeddingController::class);
 
 
 

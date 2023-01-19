@@ -48,7 +48,7 @@
     </section>
 
     <section>
-        @foreach ($experience_list as $key => $data)
+        @foreach ($wedding_list as $key => $data)
         @if ($key % 2 == 0) <div class="py-5 bg-light-gray"> @else <div class="py-5"> @endif
                 <div class="container">
                     <div class="row">
@@ -86,7 +86,7 @@
                                 <div class="d-flex flex-column align-items-center">
                                     <p class="small fw-bold text-secondary text-uppercase vertical-text">Share <i class="fa fa-long-arrow-down mt-2"></i></p>
                                     <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=700');return false;" href="//www.facebook.com/sharer/sharer.php?u={{route('experiences.index')}}" target="_blank" class="rounded-circle border-secondary text-secondary link-share link-share-facebook m-1"><i class="fa fa-facebook"></i></a>
-                                    <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=700');return false;" href="//twitter.com/intent/tweet?text={{$data->title}} - Experience at Nandini Jungle by Hanging gardens ({{ Str::limit($data->excerpt,50) }}...Read more on our website!): {{route('experiences.index')}}" target="_blank" class="rounded-circle border-secondary text-secondary link-share link-share-twitter m-1"><i class="fa fa-twitter"></i></a>
+                                    {{-- <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=700');return false;" href="//twitter.com/intent/tweet?text={{$data->title}} - Experience at Nandini Jungle by Hanging gardens ({{ Str::limit($data->excerpt,50) }}...Read more on our website!): {{route('experiences.index')}}" target="_blank" class="rounded-circle border-secondary text-secondary link-share link-share-twitter m-1"><i class="fa fa-twitter"></i></a> --}}
                                 </div>
                             </div>
 
@@ -96,7 +96,7 @@
 
                                         @foreach ($data->images as $subdata)
                                         @if ($subdata->is_active == '1')
-                                        <div class="ratio ratio-1x1">
+                                        <div class="ratio ratio-4x3">
                                             <img src="{{asset('storage/'.$subdata->image)}}" alt="{{$setting->meta_title.' - '.$subdata->title}}" class="w-100 object-fit-cover object-position-center">
                                         </div>
                                         @else
@@ -109,5 +109,18 @@
                         </div>
                     </div>
                     @endforeach
+    </section>
+
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center fst-italic">
+                    <p class="mb-2">Make your dream wedding come true.</p>
+                    <p class="mb-2">Celebrate the magic of love in the heart of mystical Ubud jungle</p>
+                    <p>Let the magic, be magical!</p>
+                </div>
+            </div>
+        </div>
     </section>
 </x-desktop>
