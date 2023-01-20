@@ -2,13 +2,20 @@
 
 namespace App\Filament\Resources\GalleryResource\RelationManagers;
 
+use Closure;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Actions\DetachAction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 
 class CategoriesRelationManager extends RelationManager
 {
@@ -22,8 +29,20 @@ class CategoriesRelationManager extends RelationManager
             ->schema([
                 Forms\Components\TextInput::make('title')
                     ->required()
-                    ->maxLength(255),
-            ]);
+                    ->maxLength(191)
+                    ->reactive()
+                    ->afterStateUpdated(function (Closure $set, $state) {
+                        $set('slug', Str::slug($state));
+                    }),
+                Forms\Components\TextInput::make('slug')
+                    ->maxLength(191),
+                RichEditor::make('Description'),
+                Toggle::make('is_active')
+                    ->label('Publish')
+                    ->onColor('primary')
+                    ->offColor('secondary')
+                    ->inline(false)
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
@@ -37,13 +56,14 @@ class CategoriesRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),
+                Tables\Actions\AttachAction::make(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                DetachAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
-    }    
+    }
 }

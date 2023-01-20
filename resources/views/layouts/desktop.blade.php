@@ -114,7 +114,7 @@
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a href="{{route('spa.index')}}" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
                     <li class="nav-item"><a href="{{route('weddings.index')}}" class="nav-link text-white px-2 px-xl-3">Weddings</a></li>
-                    <li class="nav-item"><a href="{{route('index')}}/gallery" class="nav-link text-white px-2 px-xl-3">Gallery</a></li>
+                    <li class="nav-item"><a href="{{route('gallery.index')}}" class="nav-link text-white px-2 px-xl-3">Gallery</a></li>
                     <li class="nav-item"><a href="{{route('index')}}/contact-us" class="nav-link text-white px-2 px-xl-3">Contact Us</a></li>
                 </ul>
             </div>
