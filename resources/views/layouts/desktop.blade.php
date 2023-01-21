@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
     @stack('css')
 
@@ -25,33 +25,49 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M24BJYG5TE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-M24BJYG5TE');
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-M24BJYG5TE');
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRQR4E2494"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-SRQR4E2494');
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SRQR4E2494');
     </script>
 
     <!-- Facebook Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window,document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '418396120503581'); 
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '418396120503581');
         fbq('track', 'PageView');
     </script>
     <noscript>
@@ -61,12 +77,22 @@
     <!-- End Facebook Pixel Code -->
 
     <script type='text/javascript'>
-        window.smartlook||(function(d) {
-        var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-        var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-        c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+        window.smartlook || (function(d) {
+            var o = smartlook = function() {
+                    o.api.push(arguments)
+                },
+                h = d.getElementsByTagName('head')[0];
+            var c = d.createElement('script');
+            o.api = new Array();
+            c.async = true;
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.src = 'https://web-sdk.smartlook.com/recorder.js';
+            h.appendChild(c);
         })(document);
-        smartlook('init', '2acb4ae811cea7319794d9ce01c7b91fac8a954c', { region: 'eu' });
+        smartlook('init', '2acb4ae811cea7319794d9ce01c7b91fac8a954c', {
+            region: 'eu'
+        });
     </script>
 
     <meta name="google-site-verification" content="Rdq0WcXev4isKzHINPUua_iZ4c4yiAF_gq8CUj-h1ms" />
@@ -75,19 +101,31 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBP720FPE0"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-ZBP720FPE0');
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZBP720FPE0');
     </script>
 
     <!-- Google Tag Manager -->
     <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NS5J4HS');
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NS5J4HS');
     </script>
     <!-- End Google Tag Manager -->
 
@@ -103,19 +141,19 @@
         <nav class="grow-menu navbar fixed-top navbar-expand navbar-dark bg-dark bg-opacity-50">
             <div class="container-fluid justify-content-center text-uppercase">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a href="{{route('index')}}" class="nav-link text-white px-2 px-xl-3"><i class="fa fa-home"></i></a></li>
-                    <li class="nav-item"><a href="{{route('suites-villas.index')}}" class="nav-link text-white px-2 px-xl-3">Suites &amp; Villas</a></li>
-                    <li class="nav-item"><a href="{{route('experiences.index')}}" class="nav-link text-white px-2 px-xl-3">Experiences</a></li>
-                    <li class="nav-item"><a href="{{route('dining.index')}}" class="nav-link text-white px-2 px-xl-3">Dining</a></li>
+                    <li class="nav-item"><a href="{{ route('index') }}" class="nav-link text-white px-2 px-xl-3"><i class="fa fa-home"></i></a></li>
+                    <li class="nav-item"><a href="{{ route('suites-villas.index') }}" class="nav-link text-white px-2 px-xl-3">Suites &amp; Villas</a></li>
+                    <li class="nav-item"><a href="{{ route('experiences.index') }}" class="nav-link text-white px-2 px-xl-3">Experiences</a></li>
+                    <li class="nav-item"><a href="{{ route('dining.index') }}" class="nav-link text-white px-2 px-xl-3">Dining</a></li>
                 </ul>
-                <a href="{{route('index')}}" class="navbar-brand mx-2">
+                <a href="{{ route('index') }}" class="navbar-brand mx-2">
                     <img src="https://nandinibali.com/themes/mindimedia/assets/images/green-logo.png" class="navlogo fade-in">
                 </a>
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a href="{{route('spa.index')}}" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
-                    <li class="nav-item"><a href="{{route('weddings.index')}}" class="nav-link text-white px-2 px-xl-3">Weddings</a></li>
-                    <li class="nav-item"><a href="{{route('gallery.index')}}" class="nav-link text-white px-2 px-xl-3">Gallery</a></li>
-                    <li class="nav-item"><a href="{{route('index')}}/contact-us" class="nav-link text-white px-2 px-xl-3">Contact Us</a></li>
+                    <li class="nav-item"><a href="{{ route('spa.index') }}" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
+                    <li class="nav-item"><a href="{{ route('weddings.index') }}" class="nav-link text-white px-2 px-xl-3">Weddings</a></li>
+                    <li class="nav-item"><a href="{{ route('gallery.index') }}" class="nav-link text-white px-2 px-xl-3">Gallery</a></li>
+                    <li class="nav-item"><a href="{{ route('index') }}/contact-us" class="nav-link text-white px-2 px-xl-3">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
@@ -166,7 +204,7 @@
 
         <div class="special-offers-link">
             <div>
-                <a href="{{route('index')}}/offers" class="btn btn-primary rounded-pill text-uppercase px-3 w-100">
+                <a href="{{ route('index') }}/offers" class="btn btn-primary rounded-pill text-uppercase px-3 w-100">
                     <small class="fw-bold"><i class="fa fa-gift me-2"></i> Special Offers</small>
                 </a>
                 <div class="mt-2 offers-link-hover opacity-0">
@@ -178,7 +216,7 @@
         </div>
     </header>
 
-    {{$slot}}
+    {{ $slot }}
 
     <footer>
         <div class="container my-4">
@@ -194,7 +232,7 @@
                         <h3 class="d-flex justify-content-between">About <i class="fa fa-compass"></i></h3>
                     </div>
                     <nav class="nav flex-column fs-6">
-                        <a href="https://nandinibali.com/story" class="nav-link p-0 link-dark text-decoration-none">Story</a>
+                        <a href="{{ route('story.index') }}" class="nav-link p-0 link-dark text-decoration-none">Story</a>
                         <a href="https://nandinibali.com/awards" class="nav-link p-0 link-dark text-decoration-none">Awards</a>
                         <a href="https://nandinibali.com/videos" class="nav-link p-0 link-dark text-decoration-none">Videos</a>
                         <a href="https://nandinibali.com/day-guest" class="nav-link p-0 link-dark text-decoration-none">Day Guest</a>
@@ -550,7 +588,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#BannerPopUp').modal('show');
@@ -558,57 +596,56 @@
     </script>
     <script type="text/javascript">
         if (screen.width < 768) {
-			let url = "/";
-			if (url == '/thank-you-newsletter') {
-				window.location = "{{route('index')}}/m/thank-you-enquiry";
-			} else if (url == '/thank-you-enquiry') {
-				window.location = "{{route('index')}}/m/thank-you-enquiry";
-			} else if (url == '/domestic') {
-			} else {
-				window.location = "{{route('index')}}/m";
-			}
-		}
-		$('#reserveddate_enquiry').datepicker({
-			format: 'dd-mm-yyyy',
-			startDate: "16-01-2023",
-			autoclose: true
-		});
-		$('#fromDate').datepicker({
-			format: 'dd-mm-yyyy',
-			startDate: "16-01-2023",
-			autoclose: true
-		});
-		$('#toDate').datepicker({
-			format: 'dd-mm-yyyy',
-			startDate: "17-01-2023",
-			autoclose: true
-		});
-		$('#fromDate, #toDate').change(function(e) {
-			let str = $(this).val();
-			let res =  str.split("-");
-			$(this).closest('.col').find('.datepicker-input').val(res[2]+'-'+res[1]+'-'+res[0]);
-		});
-		$('#fromDate').change(function(e) {
-			let str = $(this).val();
-			let res =  str.split("-");
-			let dat = res[2]+'-'+res[1]+'-'+res[0];
-			let date = new Date(dat);
-			date.setDate(date.getDate() + 1);
+            let url = "/";
+            if (url == '/thank-you-newsletter') {
+                window.location = "{{ route('index') }}/m/thank-you-enquiry";
+            } else if (url == '/thank-you-enquiry') {
+                window.location = "{{ route('index') }}/m/thank-you-enquiry";
+            } else if (url == '/domestic') {} else {
+                window.location = "{{ route('index') }}/m";
+            }
+        }
+        $('#reserveddate_enquiry').datepicker({
+            format: 'dd-mm-yyyy',
+            startDate: "16-01-2023",
+            autoclose: true
+        });
+        $('#fromDate').datepicker({
+            format: 'dd-mm-yyyy',
+            startDate: "16-01-2023",
+            autoclose: true
+        });
+        $('#toDate').datepicker({
+            format: 'dd-mm-yyyy',
+            startDate: "17-01-2023",
+            autoclose: true
+        });
+        $('#fromDate, #toDate').change(function(e) {
+            let str = $(this).val();
+            let res = str.split("-");
+            $(this).closest('.col').find('.datepicker-input').val(res[2] + '-' + res[1] + '-' + res[0]);
+        });
+        $('#fromDate').change(function(e) {
+            let str = $(this).val();
+            let res = str.split("-");
+            let dat = res[2] + '-' + res[1] + '-' + res[0];
+            let date = new Date(dat);
+            date.setDate(date.getDate() + 1);
 
-			let dd = (date.getDate() < 10) ? "0" + date.getDate().toString() : date.getDate();
-			let mm = (date.getMonth() < 9) ? "0" + (date.getMonth() + 1).toString() : (date.getMonth() + 1);
-			let y = date.getFullYear();
+            let dd = (date.getDate() < 10) ? "0" + date.getDate().toString() : date.getDate();
+            let mm = (date.getMonth() < 9) ? "0" + (date.getMonth() + 1).toString() : (date.getMonth() + 1);
+            let y = date.getFullYear();
 
-			$('#toDate').val(dd+'-'+mm+'-'+y);
-			$('#toDate').closest('.col').find('.datepicker-input').val(y+'-'+mm+'-'+dd);
-			
-			$('#toDate').datepicker('destroy');
-			$('#toDate').datepicker({
-				format: 'dd-mm-yyyy',
-				startDate: dd+'-'+mm+'-'+y,
-				autoclose: true
-			});
-		});
+            $('#toDate').val(dd + '-' + mm + '-' + y);
+            $('#toDate').closest('.col').find('.datepicker-input').val(y + '-' + mm + '-' + dd);
+
+            $('#toDate').datepicker('destroy');
+            $('#toDate').datepicker({
+                format: 'dd-mm-yyyy',
+                startDate: dd + '-' + mm + '-' + y,
+                autoclose: true
+            });
+        });
     </script>
     @stack('js')
 </body>
