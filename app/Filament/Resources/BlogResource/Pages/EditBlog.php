@@ -10,13 +10,6 @@ class EditBlog extends EditRecord
 {
     protected static string $resource = BlogResource::class;
 
-    protected function getActions(): array
-    {
-        return [
-            Actions\DeleteAction::make(),
-        ];
-    }
-
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

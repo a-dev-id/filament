@@ -15,8 +15,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
     @stack('css')
@@ -233,9 +231,9 @@
                     </div>
                     <nav class="nav flex-column fs-6">
                         <a href="{{ route('story.index') }}" class="nav-link p-0 link-dark text-decoration-none">Story</a>
-                        <a href="https://nandinibali.com/awards" class="nav-link p-0 link-dark text-decoration-none">Awards</a>
-                        <a href="https://nandinibali.com/videos" class="nav-link p-0 link-dark text-decoration-none">Videos</a>
-                        <a href="https://nandinibali.com/day-guest" class="nav-link p-0 link-dark text-decoration-none">Day Guest</a>
+                        <a href="{{route('awards.index')}}" class="nav-link p-0 link-dark text-decoration-none">Awards</a>
+                        <a href="{{route('videos.index')}}" class="nav-link p-0 link-dark text-decoration-none">Videos</a>
+                        <a href="{{route('day-guest.index')}}" class="nav-link p-0 link-dark text-decoration-none">Day Guest</a>
                     </nav>
                 </div>
                 <div class="col-12 col-md-3">

@@ -1,34 +1,25 @@
 @section('meta')
-    <meta name="title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-    <meta name="description" content="{{ $setting->meta_description }}">
-    <title>{{ $setting->meta_title }}</title>
-    <meta property="og:url" content="{{ route('dining.index') }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-    <meta property="og:description" content="{{ $setting->meta_description }}">
-    <meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
+<meta name="title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta name="description" content="{{ $setting->meta_description }}">
+<meta name="keywords" content="your, tags">
+<title>{{ $setting->meta_title }}</title>
+<meta property="og:url" content="{{ route('story.index') }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta property="og:description" content="{{ $setting->meta_description }}">
+<meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-    <meta property="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-    <meta name="twitter:description" content="{{ $setting->meta_description }}">
-    <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
+<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta name="twitter:description" content="{{ $setting->meta_description }}">
+<meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
+
+<link rel="canonical" href="{{ route('story.index') }}" />
 @endsection
 
 @push('css')
 @endpush
 
 @push('js')
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script type="text/javascript">
-        $('.slider').slick({
-            fade: true,
-            cssEase: 'linear',
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: false,
-        });
-    </script>
 @endpush
 
 <x-desktop>

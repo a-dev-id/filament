@@ -30,6 +30,9 @@ Route::resource('/gallery', App\Http\Controllers\Desktop\GalleryController::clas
 Route::resource('/contact-us', App\Http\Controllers\Desktop\ContactController::class);
 
 Route::resource('/story', App\Http\Controllers\Desktop\StoryController::class);
+Route::resource('/awards', App\Http\Controllers\Desktop\AwardController::class);
+Route::resource('/videos', App\Http\Controllers\Desktop\VideoController::class);
+Route::resource('/day-guest', App\Http\Controllers\Desktop\DayGuestController::class);
 
 
 

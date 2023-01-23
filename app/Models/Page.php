@@ -11,6 +11,10 @@ class Page extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'meta_keyword' => 'array',
+    ];
+
     protected $fillable = [
         'page_name',
         'title',
@@ -24,6 +28,7 @@ class Page extends Model
         'button_link',
         'meta_title',
         'meta_description',
+        'meta_keyword',
         'is_active',
     ];
 
@@ -35,5 +40,10 @@ class Page extends Model
     public function CustomFields(): BelongsToMany
     {
         return $this->belongsToMany(CustomField::class);
+    }
+
+    public function keywords(): HasMany
+    {
+        return $this->hasMany(Keyword::class);
     }
 }

@@ -1,16 +1,19 @@
 @section('meta')
 <meta name="title" content="{{$setting->meta_title}} | Nandini Jungle by Hanging Gardens">
 <meta name="description" content="{{$setting->meta_description}}">
+<meta name="keywords" content="your, tags">
 <title>{{$setting->meta_title}}</title>
-<meta property="og:url" content="{{route('dining.index')}}">
+<meta property="og:url" content="{{route('contact-us.index')}}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{$setting->meta_title}} | Nandini Jungle by Hanging Gardens">
 <meta property="og:description" content="{{$setting->meta_description}}">
 <meta property="og:image" content="{{asset('storage/'.$setting->banner_image)}}">
 
-<meta property="twitter:title" content="{{$setting->meta_title}} | Nandini Jungle by Hanging Gardens">
+<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
 <meta name="twitter:description" content="{{$setting->meta_description}}">
 <meta name="twitter:image" content="{{asset('storage/'.$setting->banner_image)}}">
+
+<link rel="canonical" href="{{ route('contact-us.index') }}" />
 @endsection
 
 @push('css')

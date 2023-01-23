@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers\CustomFieldsRelationManager;
 use App\Filament\Resources\PageResource\RelationManagers\ImagesRelationManager;
+use App\Models\Keyword;
 use App\Models\Page;
 use Closure;
 use Filament\Forms;
@@ -12,6 +13,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
@@ -72,6 +74,9 @@ class PageResource extends Resource
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('meta_description')
                                     ->maxLength(65535),
+                                Select::make('meta_keyword')
+                                    ->options(Keyword::all()->pluck('title', 'title'))
+                                    ->multiple(),
                             ]),
                         ])
                         ->collapsible()
