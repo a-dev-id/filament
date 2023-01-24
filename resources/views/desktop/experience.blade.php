@@ -1,7 +1,7 @@
 @section('meta')
 <meta name="title" content="{{$setting->meta_title}} | Nandini Jungle by Hanging Gardens">
 <meta name="description" content="{{$setting->meta_description}}">
-<meta name="keywords" content="your, tags">
+<meta name="keywords" content="{{ $setting->meta_keyword }}">
 <title>{{$setting->meta_title}}</title>
 <meta property="og:url" content="{{route('experiences.index')}}">
 <meta property="og:type" content="website">
