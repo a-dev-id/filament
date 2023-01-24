@@ -1,40 +1,40 @@
 @section('meta')
-<meta name="title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-<meta name="description" content="{{ $setting->meta_description }}">
-<meta name="keywords" content="{{ $setting->meta_keyword }}">
-<title>{{ $setting->meta_title }}</title>
-<meta property="og:url" content="{{ route('virtual-tour.index') }}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-<meta property="og:description" content="{{ $setting->meta_description }}">
-<meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
+    <meta name="title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+    <meta name="description" content="{{ $setting->meta_description }}">
+    <meta name="keywords" content="{{ implode(',', $setting->meta_keyword) }}">
+    <title>{{ $setting->meta_title }}</title>
+    <meta property="og:url" content="{{ route('360-virtual-tour.index') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+    <meta property="og:description" content="{{ $setting->meta_description }}">
+    <meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-<meta name="twitter:description" content="{{ $setting->meta_description }}">
-<meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
+    <meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+    <meta name="twitter:description" content="{{ $setting->meta_description }}">
+    <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<link rel="canonical" href="{{ route('virtual-tour.index') }}" />
+    <link rel="canonical" href="{{ route('360-virtual-tour.index') }}" />
 @endsection
 
 @push('css')
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 @endpush
 
 @push('js')
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script type="text/javascript">
-    $('.sliders').slick({
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 3000,
-		arrows: true,
-		appendArrows: ".box-arrows-1",
-		prevArrow: "<div class='float-start rounded-0 bg-white d-flex align-items-center justify-content-center p-3' role='button' tabindex='0'><i class='fa fa-chevron-left'></i></div>",
-		nextArrow: "<div class='float-end rounded-0 bg-white d-flex align-items-center justify-content-center p-3' role='button' tabindex='0'><i class='fa fa-chevron-right'></i></div>",
-	});
-</script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $('.sliders').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            appendArrows: ".box-arrows-1",
+            prevArrow: "<div class='float-start rounded-0 bg-white d-flex align-items-center justify-content-center p-3' role='button' tabindex='0'><i class='fa fa-chevron-left'></i></div>",
+            nextArrow: "<div class='float-end rounded-0 bg-white d-flex align-items-center justify-content-center p-3' role='button' tabindex='0'><i class='fa fa-chevron-right'></i></div>",
+        });
+    </script>
 @endpush
 
 <x-desktop>
@@ -59,25 +59,25 @@
                 <div class="col-12 text-center position-relative">
                     <div class="sliders overflow-hidden position-relative" style="z-index: 2;">
 
-                        @foreach ($virtual_tour_list as $data)
-                        <div class="mx-1">
-                            <div class="position-relative">
-                                <div class="ratio ratio-1x1">
-                                    <img src="https://nandinibali.com/storage/app/uploads/public/613/ed4/6bc/613ed46bc9842139957178.jpg" class="w-100 object-fit-cover object-position-center">
-                                </div>
-                                <div class="position-absolute bottom-0 w-100 h-100 d-flex align-items-center bg-hover-overlay">
-                                    <div class="text-white w-100">
-                                        <div class="h-100 px-5">
-                                            <h2 class="fs-5 mb-5">Lobby</h2>
-                                            <div class="text-center pt-4">
-                                                <a href="https://momento360.com/e/u/59ce585d5d454ca188ba2b1ddef22930?utm_campaign=embed&amp;utm_source=other&amp;heading=0&amp;pitch=0&amp;field-of-view=75&amp;size=medium" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">Go to the Tour</a>
+                        @foreach ($setting->CustomFields as $data)
+                            <div class="mx-1">
+                                <div class="position-relative">
+                                    <div class="ratio ratio-1x1">
+                                        <img src="{{ $data->cover_image }}" alt="{{ $setting->title . ' - ' . $data->title }}" class="w-100 object-fit-cover object-position-center">
+                                    </div>
+                                    <div class="position-absolute bottom-0 w-100 h-100 d-flex align-items-center bg-hover-overlay">
+                                        <div class="text-white w-100">
+                                            <div class="h-100 px-5">
+                                                {{-- <h2 class="fs-5 mb-5">{{ $data->title }}</h2> --}}
+                                                <div class="text-center pt-4">
+                                                    <a href="{{ $data->button_link }}" target="_blank" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">{{ $data->button_text }}</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <h4 class="mt-4 mb-4 fs-5 fs-xl-4 text-uppercase">{{ $data->title }}</h4>
                             </div>
-                            <h4 class="mt-4 mb-4 fs-5 fs-xl-4 text-uppercase">Lobby</h4>
-                        </div>
                         @endforeach
 
                     </div>

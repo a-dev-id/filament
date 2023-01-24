@@ -231,9 +231,9 @@
                     </div>
                     <nav class="nav flex-column fs-6">
                         <a href="{{ route('story.index') }}" class="nav-link p-0 link-dark text-decoration-none">Story</a>
-                        <a href="{{route('awards.index')}}" class="nav-link p-0 link-dark text-decoration-none">Awards</a>
-                        <a href="{{route('videos.index')}}" class="nav-link p-0 link-dark text-decoration-none">Videos</a>
-                        <a href="{{route('day-guest.index')}}" class="nav-link p-0 link-dark text-decoration-none">Day Guest</a>
+                        <a href="{{ route('awards.index') }}" class="nav-link p-0 link-dark text-decoration-none">Awards</a>
+                        <a href="{{ route('videos.index') }}" class="nav-link p-0 link-dark text-decoration-none">Videos</a>
+                        <a href="{{ route('day-guest.index') }}" class="nav-link p-0 link-dark text-decoration-none">Day Guest</a>
                     </nav>
                 </div>
                 <div class="col-12 col-md-3">
@@ -242,9 +242,9 @@
                     </div>
                     <nav class="nav flex-column fs-6">
                         <a href="https://www.dropbox.com/sh/xb63hbgvy5t4ino/AADI-7OnGudh1ND5M32zli0Da?dl=0" class="nav-link p-0 link-dark text-decoration-none" target="_blank">Media Hub</a>
-                        <a href="{{route('blog.index')}}" class="nav-link p-0 link-dark text-decoration-none">Blog</a>
-                        <a href="{{route('careers.index')}}" class="nav-link p-0 link-dark text-decoration-none">Careers</a>
-                        <a href="https://nandinibali.com/360-virtual-tour" class="nav-link p-0 link-dark text-decoration-none">360 Virtual Tour</a>
+                        <a href="{{ route('blog.index') }}" class="nav-link p-0 link-dark text-decoration-none">Blog</a>
+                        <a href="{{ route('careers.index') }}" class="nav-link p-0 link-dark text-decoration-none">Careers</a>
+                        <a href="{{ route('360-virtual-tour.index') }}" class="nav-link p-0 link-dark text-decoration-none">360 Virtual Tour</a>
                     </nav>
                 </div>
                 <div class="col-12 col-md-3">

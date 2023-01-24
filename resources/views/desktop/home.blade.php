@@ -1,114 +1,111 @@
 @section('meta')
-<meta name="title" content="{{$setting->meta_title}}">
-<meta name="description" content="{{$setting->meta_description}}">
-<meta name="keywords" content="{{ $setting->meta_keyword }}">
-<title>{{$setting->meta_title}}</title>
-<meta property="og:url" content="{{route('index')}}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{$setting->meta_title}}">
-<meta property="og:description" content="{{$setting->meta_description}}">
-<meta property="og:image" content="{{asset('storage/'.$setting->banner_image)}}">
+    <meta name="title" content="{{ $setting->meta_title }}">
+    <meta name="description" content="{{ $setting->meta_description }}">
+    <meta name="keywords" content="{{ implode(',', $setting->meta_keyword) }}">
+    <title>{{ $setting->meta_title }}</title>
+    <meta property="og:url" content="{{ route('index') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $setting->meta_title }}">
+    <meta property="og:description" content="{{ $setting->meta_description }}">
+    <meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-<meta name="twitter:description" content="{{$setting->meta_description}}">
-<meta name="twitter:image" content="{{asset('storage/'.$setting->banner_image)}}">
+    <meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+    <meta name="twitter:description" content="{{ $setting->meta_description }}">
+    <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<link rel="canonical" href="{{ route('index') }}" />
+    <link rel="canonical" href="{{ route('index') }}" />
 @endsection
 
 @push('css')
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-<style type="text/css">
-    #advantages-slides small {
-        font-size: 10px;
-        left: 80px;
-        letter-spacing: .1em;
-    }
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <style type="text/css">
+        #advantages-slides small {
+            font-size: 10px;
+            left: 80px;
+            letter-spacing: .1em;
+        }
 
-    #offers-slides .box-arrows .slick-arrow {
-        transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.7s;
-    }
+        #offers-slides .box-arrows .slick-arrow {
+            transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.7s;
+        }
 
-    #offers-slides .box-arrows .slick-arrow:hover {
-        background-color: #5A8C14 !important;
-        color: #FFF;
-        transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.7s;
-    }
-
-</style>
+        #offers-slides .box-arrows .slick-arrow:hover {
+            background-color: #5A8C14 !important;
+            color: #FFF;
+            transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.7s;
+        }
+    </style>
 @endpush
 
 @push('js')
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script type="text/javascript">
-    $('#advantages-slides .sliders').slick({
-    		slidesToShow: 3,
-    		slidesToScroll: 1,
-    		autoplay: true,
-    		autoplaySpeed: 3000,
-    		arrows: true,
-    		appendArrows: "#advantages-slides .box-arrows",
-    		prevArrow: "<div class='float-start rounded-circle border border-secondary d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-left'></i></div>",
-    		nextArrow: "<div class='float-end rounded-circle border border-secondary d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-right'></i></div>",
-    	});
-    	$('#accommodation-slides .sliders').slick({
-    		slidesToShow: 2,
-    		slidesToScroll: 1,
-    		autoplay: true,
-    		autoplaySpeed: 3000,
-    		arrows: true,
-    		appendArrows: "#accommodation-slides .box-arrows",
-    		prevArrow: "<div class='float-start rounded-0 bg-white d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-left'></i></div>",
-    		nextArrow: "<div class='float-end rounded-0 bg-white d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-right'></i></div>",
-    	});
-    	$('#experiences-slides .sliders').slick({
-    		dots: false,
-    		infinite: true,
-    		speed: 500,
-    		fade: true,
-    		cssEase: 'linear',
-    		slidesToShow: 1,
-    		slidesToScroll: 1,
-    		autoplay: true,
-    		autoplaySpeed: 3000,
-    		arrows: false,
-    	});
-    	$('#offers-slides .sliders').slick({
-    		slidesToShow: 3,
-    		slidesToScroll: 1,
-    		autoplay: true,
-    		autoplaySpeed: 3000,
-    		arrows: true,
-    		appendArrows: "#offers-slides .box-arrows",
-    		prevArrow: "<div class='float-start rounded-0 bg-white d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-left'></i></div>",
-    		nextArrow: "<div class='float-end rounded-0 bg-white d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-right'></i></div>",
-    	});
-    
-    	$('.reviews-box-list').slick({
-    		slidesToShow: 1,
-    		slidesToScroll: 1,
-    		autoplay: true,
-    		autoplaySpeed: 3000,
-    		arrows: true,
-    		appendArrows: ".reviews-box-arrows",
-    		prevArrow: "<i class='fa fa-long-arrow-left'></i>",
-    		nextArrow: "<i class='fa fa-long-arrow-right'></i>",
-    		responsive: [
-    			{
-    				breakpoint: 768,
-    				settings: {
-    					slidesToShow: 1,
-    				}
-    			},
-    		]
-    	});
-</script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $('#advantages-slides .sliders').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            appendArrows: "#advantages-slides .box-arrows",
+            prevArrow: "<div class='float-start rounded-circle border border-secondary d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-left'></i></div>",
+            nextArrow: "<div class='float-end rounded-circle border border-secondary d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-right'></i></div>",
+        });
+        $('#accommodation-slides .sliders').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            appendArrows: "#accommodation-slides .box-arrows",
+            prevArrow: "<div class='float-start rounded-0 bg-white d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-left'></i></div>",
+            nextArrow: "<div class='float-end rounded-0 bg-white d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-right'></i></div>",
+        });
+        $('#experiences-slides .sliders').slick({
+            dots: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: false,
+        });
+        $('#offers-slides .sliders').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            appendArrows: "#offers-slides .box-arrows",
+            prevArrow: "<div class='float-start rounded-0 bg-white d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-left'></i></div>",
+            nextArrow: "<div class='float-end rounded-0 bg-white d-flex align-items-center justify-content-center' role='button' tabindex='0'><i class='fa fa-chevron-right'></i></div>",
+        });
+
+        $('.reviews-box-list').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            appendArrows: ".reviews-box-arrows",
+            prevArrow: "<i class='fa fa-long-arrow-left'></i>",
+            nextArrow: "<i class='fa fa-long-arrow-right'></i>",
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }, ]
+        });
+    </script>
 @endpush
 
 <x-desktop>
     <!-- Modal -->
-    <div class="modal fade" id="BannerPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="BannerPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" style="background-color: white; border-radius: 0px!important; top: 100px;">
                 <div class="modal-body p-0">
@@ -123,7 +120,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- OLD Modal
     <div class="modal fade" id="BannerPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,7 +137,7 @@
                 <h3 class="">TIS THE SEASON TO CELEBRATE</h3>
                 <p class="mb-3" style="font-size: 16px;">
                     Following the 2022 theme of HGI, The Wondrous Journey,<br>
-                    this festive season, Nandini Jungle Resort & Spa will cast a Dashing Wonderland all over the resort, offering an array of a remarkable experiences blends with  
+                    this festive season, Nandini Jungle Resort & Spa will cast a Dashing Wonderland all over the resort, offering an array of a remarkable experiences blends with
                     a flavourful culinary journey offering by HGI Corporate Executive Chef Ridwan Hakim, <br>
                     starting from Dec 20, 2022 until Jan 8, 2023<br>
                 </p>
@@ -159,21 +156,21 @@
               </div>
             </div>
     
-          </div>    
+          </div>
         </div>
       </div>
     </div> -->
 
     <section class="vh-100 overflow-hidden position-relative">
-        <iframe src="{{$setting->button_link}}" class="header-iframe-youtube"></iframe>
+        <iframe src="{{ $setting->button_link }}" class="header-iframe-youtube"></iframe>
     </section>
 
     <section class="py-90 bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="fw-bold text-uppercase mb-2">{{$setting->title}}<br></h1>
-                    <h4 class=" mb-5 underline">{{$setting->subtitle}}</h4>
+                    <h1 class="fw-bold text-uppercase mb-2">{{ $setting->title }}<br></h1>
+                    <h4 class=" mb-5 underline">{{ $setting->subtitle }}</h4>
                     {!! $setting->description !!}
                 </div>
             </div>
@@ -188,10 +185,13 @@
                     <div class="sliders px-4 d-flex justify-content-center align-items-center">
 
                         @foreach ($setting->CustomFields as $data)
-                        <div class="border-end border-primary px-5 d-flex flex-column align-items-start justify-content-center h-100px">
-                            <p class="fw-bold mb-2">{{$data->title}}</p>
-                            <p class="text-primary mb-0 small">{{$data->excerpt}}</p>
-                        </div>
+                            @if ($data->is_active == '1')
+                                <div class="border-end border-primary px-5 d-flex flex-column align-items-start justify-content-center h-100px">
+                                    <p class="fw-bold mb-2">{{ $data->title }}</p>
+                                    <p class="text-primary mb-0 small">{{ $data->excerpt }}</p>
+                                </div>
+                            @else
+                            @endif
                         @endforeach
 
                     </div>
@@ -207,114 +207,31 @@
                     <h1 class="fs-2 text-center mb-5 underline">Accommodations</h1>
                     <div class="position-relative" id="accommodation-slides">
                         <div class="sliders with-half-slides overflow-hidden">
-                            <div class="position-relative">
-                                <div class="ratio ratio-4x3">
-                                    <img src="https://nandinibali.com/storage/app/uploads/public/637/8e4/e44/6378e4e449a1f084511274.jpeg" class="w-100 object-fit-cover object-position-center">
-                                </div>
-                                <div class="position-absolute bottom-0 w-100 h-50 d-flex align-items-end pb-4 bg-black-white-gradient">
-                                    <div class="text-white d-flex justify-content-between align-items-center w-100 pe-4">
-                                        <div class="leftline position-relative ps-5">
-                                            <div class="px-3">
-                                                <h2 class="fs-4 fw-bold mb-3">Garden View Royal Suite</h2>
-                                                <p class="small mb-0">Our Garden View Royal Suites effortlessly combine the luxury of a five stars room facilities with th...</p>
+
+                            @foreach ($villa_list as $data)
+                                @if ($data->is_active == '1')
+                                    <div class="position-relative">
+                                        <div class="ratio ratio-4x3">
+                                            <img src="{{ asset('storage/' . $data->banner_image) }}" alt="{{ $data->title }}" class="w-100 object-fit-cover object-position-center">
+                                        </div>
+                                        <div class="position-absolute bottom-0 w-100 h-50 d-flex align-items-end pb-4 bg-black-white-gradient">
+                                            <div class="text-white d-flex justify-content-between align-items-center w-100 pe-4">
+                                                <div class="leftline position-relative ps-5">
+                                                    <div class="px-3">
+                                                        <h2 class="fs-4 fw-bold mb-3">{{ $data->title }}</h2>
+                                                        <p class="small mb-0">{{ Str::limit($data->excerpt, 90) }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <a href="{{ route('suites-villas.show', [$data->slug]) }}" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">Explore</a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="d-flex align-items-center">
-                                            <a href="https://nandinibali.com/suites-villas/garden-view-royal-suite" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">Explore</a>
-                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="position-relative">
-                                <div class="ratio ratio-4x3">
-                                    <img src="https://nandinibali.com/storage/app/uploads/public/637/8e7/825/6378e7825eb80086919609.jpeg" class="w-100 object-fit-cover object-position-center">
-                                </div>
-                                <div class="position-absolute bottom-0 w-100 h-50 d-flex align-items-end pb-4 bg-black-white-gradient">
-                                    <div class="text-white d-flex justify-content-between align-items-center w-100 pe-4">
-                                        <div class="leftline position-relative ps-5">
-                                            <div class="px-3">
-                                                <h2 class="fs-4 fw-bold mb-3">Jungle View Royal Suite</h2>
-                                                <p class="small mb-0">Our Jungle Royal Suites effortlessly combine the luxury of a five stars room facilities with the raw...</p>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <a href="https://nandinibali.com/suites-villas/jungleview-royal-suite" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">Explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="position-relative">
-                                <div class="ratio ratio-4x3">
-                                    <img src="https://nandinibali.com/storage/app/uploads/public/637/8e8/a09/6378e8a09a0ed005649383.jpg" class="w-100 object-fit-cover object-position-center">
-                                </div>
-                                <div class="position-absolute bottom-0 w-100 h-50 d-flex align-items-end pb-4 bg-black-white-gradient">
-                                    <div class="text-white d-flex justify-content-between align-items-center w-100 pe-4">
-                                        <div class="leftline position-relative ps-5">
-                                            <div class="px-3">
-                                                <h2 class="fs-4 fw-bold mb-3">Jungle View Villa</h2>
-                                                <p class="small mb-0">The Jungle View Villa offers stunning sunrise views over the jungle. With exactly same size as Panor...</p>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <a href="https://nandinibali.com/suites-villas/jungle-view-villa" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">Explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="position-relative">
-                                <div class="ratio ratio-4x3">
-                                    <img src="https://nandinibali.com/storage/app/uploads/public/637/8ea/2a1/6378ea2a1a9ec330025018.jpeg" class="w-100 object-fit-cover object-position-center">
-                                </div>
-                                <div class="position-absolute bottom-0 w-100 h-50 d-flex align-items-end pb-4 bg-black-white-gradient">
-                                    <div class="text-white d-flex justify-content-between align-items-center w-100 pe-4">
-                                        <div class="leftline position-relative ps-5">
-                                            <div class="px-3">
-                                                <h2 class="fs-4 fw-bold mb-3">Panoramic View Villa</h2>
-                                                <p class="small mb-0">Our Panoramic View Villa stands with stunning and uninterrupted views over the river gorge and a fee...</p>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <a href="https://nandinibali.com/suites-villas/panoramic-view-villa" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">Explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="position-relative">
-                                <div class="ratio ratio-4x3">
-                                    <img src="https://nandinibali.com/storage/app/uploads/public/637/8f0/04a/6378f004ae06f526686536.jpeg" class="w-100 object-fit-cover object-position-center">
-                                </div>
-                                <div class="position-absolute bottom-0 w-100 h-50 d-flex align-items-end pb-4 bg-black-white-gradient">
-                                    <div class="text-white d-flex justify-content-between align-items-center w-100 pe-4">
-                                        <div class="leftline position-relative ps-5">
-                                            <div class="px-3">
-                                                <h2 class="fs-4 fw-bold mb-3">Sunrise View Villa</h2>
-                                                <p class="small mb-0">Surrounded by the serene Rainforest atmosphere, the Sunrise View Villa offers the majestic golden su...</p>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <a href="https://nandinibali.com/suites-villas/sunrise-view-villa" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">Explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="position-relative">
-                                <div class="ratio ratio-4x3">
-                                    <img src="https://nandinibali.com/storage/app/uploads/public/637/8ed/a06/6378eda06e43a328461407.jpeg" class="w-100 object-fit-cover object-position-center">
-                                </div>
-                                <div class="position-absolute bottom-0 w-100 h-50 d-flex align-items-end pb-4 bg-black-white-gradient">
-                                    <div class="text-white d-flex justify-content-between align-items-center w-100 pe-4">
-                                        <div class="leftline position-relative ps-5">
-                                            <div class="px-3">
-                                                <h2 class="fs-4 fw-bold mb-3">Presidential Suite</h2>
-                                                <p class="small mb-0">Our magnificent Presidential Suite is a true definition of luxury.</p>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <a href="https://nandinibali.com/suites-villas/presidential-suite" class="btn btn-outline-light rounded-0 px-4 py-2 text-uppercase">Explore</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                @else
+                                @endif
+                            @endforeach
+
                         </div>
                         <div class="box-arrows position-absolute w-100"></div>
                     </div>

@@ -35,6 +35,7 @@ Route::resource('/videos', App\Http\Controllers\Desktop\VideoController::class);
 Route::resource('/day-guest', App\Http\Controllers\Desktop\DayGuestController::class);
 Route::resource('/blog', App\Http\Controllers\Desktop\BlogController::class);
 Route::resource('/careers', App\Http\Controllers\Desktop\CareerController::class);
+Route::resource('/360-virtual-tour', App\Http\Controllers\Desktop\VirtualTourController::class);
 
 
 

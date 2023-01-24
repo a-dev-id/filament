@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Desktop;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
-use App\Models\Villa;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class VirtualTourController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '1')->first();
-        $villa_list = Villa::where('is_active', '1')->get();
-        return view('desktop.home')->with(compact('setting', 'villa_list'));
+        $setting = Page::where('is_active', '1')->where('id', '15')->first();
+        return view('desktop.virtual-tour')->with(compact('setting'));
     }
 
     /**
