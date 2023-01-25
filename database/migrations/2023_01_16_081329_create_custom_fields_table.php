@@ -20,6 +20,9 @@ return new class extends Migration
             $table->text('excerpt')->nullable();
             $table->longText('description')->nullable();
 
+            $table->text('cover_image')->nullable();
+            $table->text('banner_image')->nullable();
+
             $table->string('button_text')->nullable();
             $table->string('button_link')->nullable();
 

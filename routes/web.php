@@ -28,6 +28,7 @@ Route::resource('/spa', App\Http\Controllers\Desktop\SpaController::class);
 Route::resource('/weddings', App\Http\Controllers\Desktop\WeddingController::class);
 Route::resource('/gallery', App\Http\Controllers\Desktop\GalleryController::class);
 Route::resource('/contact-us', App\Http\Controllers\Desktop\ContactController::class);
+Route::resource('/offers', App\Http\Controllers\Desktop\OfferController::class);
 
 Route::resource('/story', App\Http\Controllers\Desktop\StoryController::class);
 Route::resource('/awards', App\Http\Controllers\Desktop\AwardController::class);

@@ -4,10 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Blog extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'meta_keyword' => 'array',
+    ];
 
     protected $fillable = [
         'title',
@@ -21,6 +26,12 @@ class Blog extends Model
         'button_link',
         'meta_title',
         'meta_description',
+        'meta_keyword',
         'is_active',
     ];
+
+    public function keywords(): HasMany
+    {
+        return $this->hasMany(Keyword::class);
+    }
 }

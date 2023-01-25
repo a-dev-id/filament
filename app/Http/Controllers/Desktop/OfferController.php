@@ -3,14 +3,11 @@
 namespace App\Http\Controllers\Desktop;
 
 use App\Http\Controllers\Controller;
-use App\Models\Experience;
 use App\Models\Offer;
 use App\Models\Page;
-use App\Models\Review;
-use App\Models\Villa;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class OfferController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,12 +16,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '1')->first();
-        $villa_list = Villa::where('is_active', '1')->get();
-        $experience_list = Experience::where('is_active', '1')->get();
+        $setting = Page::where('is_active', '1')->where('id', '16')->first();
         $offer_list = Offer::where('is_active', '1')->get();
-        $review_list = Review::where('is_active', '1')->get();
-        return view('desktop.home')->with(compact('setting', 'villa_list', 'experience_list', 'offer_list', 'review_list'));
+        return view('desktop.offer')->with(compact('setting', 'offer_list'));
     }
 
     /**

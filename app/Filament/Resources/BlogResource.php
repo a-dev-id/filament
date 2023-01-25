@@ -5,12 +5,14 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BlogResource\Pages;
 use App\Filament\Resources\BlogResource\RelationManagers;
 use App\Models\Blog;
+use App\Models\Keyword;
 use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
@@ -66,6 +68,9 @@ class BlogResource extends Resource
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('meta_description')
                                     ->maxLength(65535),
+                                Select::make('meta_keyword')
+                                    ->options(Keyword::all()->pluck('title', 'title'))
+                                    ->multiple(),
                             ]),
                         ])
                         ->collapsible()

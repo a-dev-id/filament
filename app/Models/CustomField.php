@@ -15,6 +15,8 @@ class CustomField extends Model
         'subtitle',
         'excerpt',
         'description',
+        'cover_image',
+        'banner_image',
         'button_text',
         'button_link',
         'is_active',

@@ -4,6 +4,7 @@ namespace App\Filament\Resources\PageResource\RelationManagers;
 
 use Closure;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -13,6 +14,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -45,6 +47,10 @@ class CustomFieldsRelationManager extends RelationManager
                     Section::make('Additional')
                         ->schema([
                             Grid::make(2)->schema([
+                                FileUpload::make('banner_image')->label('Banner Image'),
+                                FileUpload::make('cover_image')->label('Cover Image'),
+                            ]),
+                            Grid::make(2)->schema([
                                 Forms\Components\TextInput::make('button_text')->label('Text')
                                     ->maxLength(191),
                                 Forms\Components\TextInput::make('button_link')->label('Link')
@@ -67,6 +73,7 @@ class CustomFieldsRelationManager extends RelationManager
         return $table
             ->columns([
                 TextColumn::make('id')->label('ID'),
+                ImageColumn::make('cover_image')->square(),
                 Tables\Columns\TextColumn::make('title'),
                 Tables\Columns\TextColumn::make('is_active')->label('Published'),
                 IconColumn::make('is_active')->label('Published')

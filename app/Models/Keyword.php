@@ -23,4 +23,9 @@ class Keyword extends Model
     {
         return $this->belongsTo(Page::class);
     }
+
+    public function blog(): BelongsTo
+    {
+        return $this->belongsTo(Blog::class);
+    }
 }
