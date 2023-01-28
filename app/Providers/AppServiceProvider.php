@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Filament\Facades\Filament;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -32,5 +33,7 @@ class AppServiceProvider extends ServiceProvider
             'Setting',
             'Advance',
         ]);
+
+        Paginator::useBootstrapFive();
     }
 }

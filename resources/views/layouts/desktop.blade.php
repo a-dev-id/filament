@@ -7,7 +7,7 @@
 
     @yield('meta')
 
-    <link rel="icon" type="image/png" href="https://nandinibali.com/themes/mindimedia/assets/images/nandini-icon.png">
+    <link rel="icon" type="image/png" href="{{asset('images/nandini-icon.png')}}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -259,7 +259,7 @@
                     </nav>
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <a target="_blank" href="https://www.luxurialifestyle.com/discovering-balis-best-luxury-resorts/"><img src="https://nandinibali.com/themes/mindimedia/assets/images/nandini-award.png" class="w-100"></a>
+                            <a target="_blank" href="https://www.luxurialifestyle.com/discovering-balis-best-luxury-resorts/"><img src="{{asset('images/nandini-award.png')}}" class="w-100"></a>
                         </div>
                     </div>
                 </div>
@@ -570,7 +570,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/6281236871170" target="_blank" rel="noopener" class="whatsapp-floating"><img src="https://nandinibali.com/themes/mindimedia/assets/images/whatsapp-logo.png" alt="whatsapp"></a>
+    <a href="https://wa.me/6281236871170" target="_blank" rel="noopener" class="whatsapp-floating"><img src="{{asset('images/whatsapp-logo.png')}}" alt="whatsapp"></a>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
