@@ -7,7 +7,7 @@
 
     @yield('meta')
 
-    <link rel="icon" type="image/png" href="{{asset('images/nandini-icon.png')}}">
+    <link rel="icon" type="image/png" href="{{ asset('images/nandini-icon.png') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,120 +19,18 @@
 
     @stack('css')
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M24BJYG5TE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    @php
+        $header = App\Models\CssScript::where('section', 'header')->first();
+        $body = App\Models\CssScript::where('section', 'body')->first();
+        $footer = App\Models\CssScript::where('section', 'footer')->first();
+    @endphp
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-M24BJYG5TE');
-    </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRQR4E2494"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-SRQR4E2494');
-    </script>
-
-    <!-- Facebook Pixel Code -->
-    <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '418396120503581');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" src="https://www.facebook.com/tr?id=418396120503581&ev=PageView
-        &noscript=1" />
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-
-    <script type='text/javascript'>
-        window.smartlook || (function(d) {
-            var o = smartlook = function() {
-                    o.api.push(arguments)
-                },
-                h = d.getElementsByTagName('head')[0];
-            var c = d.createElement('script');
-            o.api = new Array();
-            c.async = true;
-            c.type = 'text/javascript';
-            c.charset = 'utf-8';
-            c.src = 'https://web-sdk.smartlook.com/recorder.js';
-            h.appendChild(c);
-        })(document);
-        smartlook('init', '2acb4ae811cea7319794d9ce01c7b91fac8a954c', {
-            region: 'eu'
-        });
-    </script>
-
-    <meta name="google-site-verification" content="Rdq0WcXev4isKzHINPUua_iZ4c4yiAF_gq8CUj-h1ms" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBP720FPE0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-ZBP720FPE0');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NS5J4HS');
-    </script>
-    <!-- End Google Tag Manager -->
+    {!! $header->script !!}
 
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS5J4HS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    {!! $body->script !!}
 
     <!-- Header -->
     <header>
@@ -145,7 +43,7 @@
                     <li class="nav-item"><a href="{{ route('dining.index') }}" class="nav-link text-white px-2 px-xl-3">Dining</a></li>
                 </ul>
                 <a href="{{ route('index') }}" class="navbar-brand mx-2">
-                    <img src="{{asset('images/green-logo.png')}}" class="navlogo fade-in">
+                    <img src="{{ asset('images/green-logo.png') }}" class="navlogo fade-in">
                 </a>
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a href="{{ route('spa.index') }}" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
@@ -259,7 +157,7 @@
                     </nav>
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <a target="_blank" href="https://www.luxurialifestyle.com/discovering-balis-best-luxury-resorts/"><img src="{{asset('images/nandini-award.png')}}" class="w-100"></a>
+                            <a target="_blank" href="https://www.luxurialifestyle.com/discovering-balis-best-luxury-resorts/"><img src="{{ asset('images/nandini-award.png') }}" class="w-100"></a>
                         </div>
                     </div>
                 </div>
@@ -553,7 +451,7 @@
                         </form>
                     </div>
                     <div class="col-12 col-md-2 text-md-end">
-                        {{--<button type="submit" class="btn btn-outline-light text-uppercase py-3 px-4 px-xl-5 fw-bold rounded-0" form="subscribeForm">Submit</button> --}}
+                        {{-- <button type="submit" class="btn btn-outline-light text-uppercase py-3 px-4 px-xl-5 fw-bold rounded-0" form="subscribeForm">Submit</button> --}}
 
                         <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-outline-light text-uppercase py-3 px-4 px-xl-5 fw-bold rounded-0" form="mc-embedded-subscribe-form">
                     </div>
@@ -570,7 +468,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/6281236871170" target="_blank" rel="noopener" class="whatsapp-floating"><img src="{{asset('images/whatsapp-logo.png')}}" alt="whatsapp"></a>
+    <a href="https://wa.me/6281236871170" target="_blank" rel="noopener" class="whatsapp-floating"><img src="{{ asset('images/whatsapp-logo.png') }}" alt="whatsapp"></a>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -634,6 +532,7 @@
             });
         });
     </script>
+    {!! $footer->script !!}
     @stack('js')
 </body>
 

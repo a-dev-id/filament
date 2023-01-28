@@ -20,7 +20,7 @@ class CssScriptResource extends Resource
 {
     protected static ?string $model = CssScript::class;
 
-    protected static ?int $navigationSort = 15;
+    protected static ?int $navigationSort = 2;
     protected static ?string $navigationGroup = 'Advance';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 

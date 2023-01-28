@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Experience;
 use App\Models\Offer;
 use App\Models\Page;
+use App\Models\PopUp;
 use App\Models\Review;
 use App\Models\Villa;
 use Illuminate\Http\Request;
@@ -24,7 +25,8 @@ class HomeController extends Controller
         $experience_list = Experience::where('is_active', '1')->get();
         $offer_list = Offer::where('is_active', '1')->get();
         $review_list = Review::where('is_active', '1')->get();
-        return view('desktop.home')->with(compact('setting', 'villa_list', 'experience_list', 'offer_list', 'review_list'));
+        $popup_list = PopUp::where('is_active', '1')->get();
+        return view('desktop.home')->with(compact('setting', 'villa_list', 'experience_list', 'offer_list', 'review_list', 'popup_list'));
     }
 
     /**

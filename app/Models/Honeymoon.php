@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class PopUp extends Model
+class Honeymoon extends Model
 {
     use HasFactory;
 
@@ -19,9 +20,15 @@ class PopUp extends Model
         'cover_image',
         'button_text',
         'button_link',
+        'price',
+        'per',
         'meta_title',
         'meta_description',
-        'meta_keyword',
         'is_active',
     ];
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(HoneymoonImage::class);
+    }
 }

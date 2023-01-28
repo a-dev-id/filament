@@ -4,21 +4,16 @@ namespace App\Filament\Resources\PopUpResource\Pages;
 
 use App\Filament\Resources\PopUpResource;
 use Filament\Pages\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ManageRecords;
 
-class EditPopUp extends EditRecord
+class ManagePopUps extends ManageRecords
 {
     protected static string $resource = PopUpResource::class;
 
     protected function getActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\CreateAction::make(),
         ];
-    }
-
-    protected function getRedirectUrl(): string
-    {
-        return $this->getResource()::getUrl('index');
     }
 }

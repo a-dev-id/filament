@@ -17,7 +17,7 @@ class LandingPageResource extends Resource
 {
     protected static ?string $model = LandingPage::class;
 
-    protected static ?int $navigationSort = 13;
+    protected static ?int $navigationSort = 3;
     protected static ?string $navigationGroup = 'Advance';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
