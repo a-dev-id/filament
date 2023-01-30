@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\HoneymoonResource\Pages;
 use App\Filament\Resources\HoneymoonResource\RelationManagers;
+use App\Filament\Resources\HoneymoonResource\RelationManagers\ImagesRelationManager;
 use App\Models\Honeymoon;
 use Closure;
 use Filament\Forms;
@@ -144,7 +145,7 @@ class HoneymoonResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ImagesRelationManager::class,
         ];
     }
 

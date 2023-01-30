@@ -3,6 +3,12 @@
 namespace App\Http\Controllers\Mobile;
 
 use App\Http\Controllers\Controller;
+use App\Models\Experience;
+use App\Models\Offer;
+use App\Models\Page;
+use App\Models\PopUp;
+use App\Models\Review;
+use App\Models\Villa;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +20,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('mobile.home');
+        $setting = Page::where('is_active', '1')->where('id', '1')->first();
+        $villa_list = Villa::where('is_active', '1')->get();
+        $experience_list = Experience::where('is_active', '1')->get();
+        $popup_list = PopUp::where('is_active', '1')->get();
+        return view('mobile.home')->with(compact('setting', 'villa_list', 'experience_list', 'popup_list'));
     }
 
     /**

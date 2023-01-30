@@ -20,9 +20,9 @@
     @stack('css')
 
     @php
-        $header = App\Models\CssScript::where('section', 'header')->first();
-        $body = App\Models\CssScript::where('section', 'body')->first();
-        $footer = App\Models\CssScript::where('section', 'footer')->first();
+    $header = App\Models\CssScript::where('section', 'header')->first();
+    $body = App\Models\CssScript::where('section', 'body')->first();
+    $footer = App\Models\CssScript::where('section', 'footer')->first();
     @endphp
 
     {!! $header->script !!}
@@ -142,7 +142,7 @@
                         <a href="https://www.dropbox.com/sh/xb63hbgvy5t4ino/AADI-7OnGudh1ND5M32zli0Da?dl=0" class="nav-link p-0 link-dark text-decoration-none" target="_blank">Media Hub</a>
                         <a href="{{ route('blog.index') }}" class="nav-link p-0 link-dark text-decoration-none">Blog</a>
                         <a href="{{ route('careers.index') }}" class="nav-link p-0 link-dark text-decoration-none">Careers</a>
-                        <a href="{{ route('360-virtual-tour.index') }}" class="nav-link p-0 link-dark text-decoration-none">360 Virtual Tour</a>
+                        <a href="{{ route('virtual-tour.index') }}" class="nav-link p-0 link-dark text-decoration-none">360 Virtual Tour</a>
                     </nav>
                 </div>
                 <div class="col-12 col-md-3">

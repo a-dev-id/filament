@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateHoneymoon extends CreateRecord
 {
     protected static string $resource = HoneymoonResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
