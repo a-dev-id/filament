@@ -11,6 +11,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -40,8 +41,9 @@ class ImagesRelationManager extends RelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
+                TextColumn::make('id')->label('ID'),
                 ImageColumn::make('image')->square(),
+                Tables\Columns\TextColumn::make('title'),
                 IconColumn::make('is_active')->label('Published')
                     ->options([
                         'heroicon-o-x-circle' => 0,

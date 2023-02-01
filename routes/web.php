@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-
 // desktop
 Route::resource('/', App\Http\Controllers\Desktop\HomeController::class);
 Route::resource('/suites-villas', App\Http\Controllers\Desktop\VillaController::class);
@@ -39,7 +33,13 @@ Route::resource('/blog', App\Http\Controllers\Desktop\BlogController::class);
 Route::resource('/careers', App\Http\Controllers\Desktop\CareerController::class);
 Route::resource('/virtual-tour', App\Http\Controllers\Desktop\VirtualTourController::class);
 
-
-
 // mobile
-Route::resource('/m', App\Http\Controllers\Mobile\HomeController::class);
+Route::get('/m', [App\Http\Controllers\Mobile\HomeController::class, 'index'])->name('mindex');
+Route::get('/m/blog', [App\Http\Controllers\Mobile\BlogController::class, 'index'])->name('mblog');
+Route::get('/m/blog/{slug}', [App\Http\Controllers\Mobile\BlogController::class, 'show'])->name('mblog.show');
+Route::get('/m/dining', [App\Http\Controllers\Mobile\DiningController::class, 'index'])->name('mdining');
+Route::get('/m/experience', [App\Http\Controllers\Mobile\ExperienceController::class, 'index'])->name('mexperience');
+Route::get('/m/gallery', [App\Http\Controllers\Mobile\GalleryController::class, 'index'])->name('mgallery');
+Route::get('/m/offer', [App\Http\Controllers\Mobile\OfferController::class, 'index'])->name('moffer');
+Route::get('/m/spa', [App\Http\Controllers\Mobile\SpaController::class, 'index'])->name('mspa');
+Route::get('/m/villa', [App\Http\Controllers\Mobile\VillaController::class, 'index'])->name('mvilla');
