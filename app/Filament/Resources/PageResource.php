@@ -126,9 +126,10 @@ class PageResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('id')->label('ID'),
+                ImageColumn::make('banner_image')->square()->label('Image'),
                 Tables\Columns\TextColumn::make('page_name')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
-                ImageColumn::make('banner_image')->square(),
                 Tables\Columns\TextColumn::make('is_active')->label('Published'),
                 IconColumn::make('is_active')->label('Published')
                     ->options([

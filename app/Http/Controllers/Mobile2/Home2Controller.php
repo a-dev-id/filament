@@ -1,17 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Mobile;
+namespace App\Http\Controllers\Mobile2;
 
 use App\Http\Controllers\Controller;
-use App\Models\Experience;
-use App\Models\Offer;
 use App\Models\Page;
-use App\Models\PopUp;
-use App\Models\Review;
-use App\Models\Villa;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class Home2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +21,10 @@ class HomeController extends Controller
         $dining = Page::where('is_active', '1')->where('id', '4')->first();
         $offer = Page::where('is_active', '1')->where('id', '16')->first();
         $spa = Page::where('is_active', '1')->where('id', '5')->first();
-        return view('mobile.home')->with(compact('setting', 'villa', 'experience', 'dining', 'offer', 'spa'));
+        $wedding = Page::where('is_active', '1')->where('id', '6')->first();
+        $blog = Page::where('is_active', '1')->where('id', '13')->first();
+        $honeymoon = Page::where('is_active', '1')->where('id', '17')->first();
+        return view('mobile2.home')->with(compact('setting', 'villa', 'experience', 'dining', 'offer', 'spa', 'wedding', 'blog', 'honeymoon'));
     }
 
     /**

@@ -51,9 +51,9 @@ class CustomFieldsRelationManager extends RelationManager
                                 FileUpload::make('cover_image')->label('Cover Image'),
                             ]),
                             Grid::make(2)->schema([
-                                Forms\Components\TextInput::make('button_text')->label('Text')
+                                Forms\Components\TextInput::make('button_text')
                                     ->maxLength(191),
-                                Forms\Components\TextInput::make('button_link')->label('Link')
+                                Forms\Components\TextInput::make('button_link')
                                     ->maxLength(191),
                             ]),
                             Grid::make(1)->schema([

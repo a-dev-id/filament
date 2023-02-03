@@ -34,12 +34,25 @@ Route::resource('/careers', App\Http\Controllers\Desktop\CareerController::class
 Route::resource('/virtual-tour', App\Http\Controllers\Desktop\VirtualTourController::class);
 
 // mobile
-Route::get('/m', [App\Http\Controllers\Mobile\HomeController::class, 'index'])->name('mindex');
-Route::get('/m/blog', [App\Http\Controllers\Mobile\BlogController::class, 'index'])->name('mblog');
-Route::get('/m/blog/{slug}', [App\Http\Controllers\Mobile\BlogController::class, 'show'])->name('mblog.show');
-Route::get('/m/dining', [App\Http\Controllers\Mobile\DiningController::class, 'index'])->name('mdining');
-Route::get('/m/experience', [App\Http\Controllers\Mobile\ExperienceController::class, 'index'])->name('mexperience');
-Route::get('/m/gallery', [App\Http\Controllers\Mobile\GalleryController::class, 'index'])->name('mgallery');
-Route::get('/m/offer', [App\Http\Controllers\Mobile\OfferController::class, 'index'])->name('moffer');
-Route::get('/m/spa', [App\Http\Controllers\Mobile\SpaController::class, 'index'])->name('mspa');
-Route::get('/m/villa', [App\Http\Controllers\Mobile\VillaController::class, 'index'])->name('mvilla');
+// Route::get('/m', [App\Http\Controllers\Mobile\HomeController::class, 'index'])->name('mindex');
+// Route::get('/m/blog', [App\Http\Controllers\Mobile\BlogController::class, 'index'])->name('mblog');
+// Route::get('/m/blog/{slug}', [App\Http\Controllers\Mobile\BlogController::class, 'show'])->name('mblog.show');
+// Route::get('/m/dining', [App\Http\Controllers\Mobile\DiningController::class, 'index'])->name('mdining');
+// Route::get('/m/experience', [App\Http\Controllers\Mobile\ExperienceController::class, 'index'])->name('mexperience');
+// Route::get('/m/gallery', [App\Http\Controllers\Mobile\GalleryController::class, 'index'])->name('mgallery');
+// Route::get('/m/offer', [App\Http\Controllers\Mobile\OfferController::class, 'index'])->name('moffer');
+// Route::get('/m/spa', [App\Http\Controllers\Mobile\SpaController::class, 'index'])->name('mspa');
+// Route::get('/m/villa', [App\Http\Controllers\Mobile\VillaController::class, 'index'])->name('mvilla');
+
+// mobile 2
+Route::get('/m', [App\Http\Controllers\Mobile2\Home2Controller::class, 'index'])->name('mindex');
+Route::get('/m/blog', [App\Http\Controllers\Mobile2\Blog2Controller::class, 'index'])->name('mblog');
+Route::get('/m/blog/{slug}', [App\Http\Controllers\Mobile2\Blog2Controller::class, 'show'])->name('mblog.show');
+Route::get('/m/dining', [App\Http\Controllers\Mobile2\Dining2Controller::class, 'index'])->name('mdining');
+Route::get('/m/experiences', [App\Http\Controllers\Mobile2\Experience2Controller::class, 'index'])->name('mexperience');
+Route::get('/m/gallery', [App\Http\Controllers\Mobile2\Gallery2Controller::class, 'index'])->name('mgallery');
+Route::get('/m/offer', [App\Http\Controllers\Mobile2\Offer2Controller::class, 'index'])->name('moffer');
+Route::get('/m/spa', [App\Http\Controllers\Mobile2\Spa2Controller::class, 'index'])->name('mspa');
+Route::get('/m/accommodations', [App\Http\Controllers\Mobile2\Villa2Controller::class, 'index'])->name('mvilla');
+Route::get('/m/wedding', [App\Http\Controllers\Mobile2\Wedding2Controller::class, 'index'])->name('mwedding');
+Route::get('/m/honeymoon', [App\Http\Controllers\Mobile2\Honeymoon2Controller::class, 'index'])->name('mhoneymoon');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Mobile;
 
 use App\Http\Controllers\Controller;
+use App\Models\Page;
+use App\Models\Villa;
 use Illuminate\Http\Request;
 
 class VillaController extends Controller
@@ -14,7 +16,9 @@ class VillaController extends Controller
      */
     public function index()
     {
-        //
+        $setting = Page::where('is_active', '1')->where('id', '2')->first();
+        $villa_list = Villa::where('is_active', '1')->get();
+        return view('mobile.villa')->with(compact('setting', 'villa_list'));
     }
 
     /**

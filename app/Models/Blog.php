@@ -24,6 +24,7 @@ class Blog extends Model
         'cover_image',
         'button_text',
         'button_link',
+        'min_night',
         'meta_title',
         'meta_description',
         'meta_keyword',

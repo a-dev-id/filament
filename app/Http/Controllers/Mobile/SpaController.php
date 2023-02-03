@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mobile;
 
 use App\Http\Controllers\Controller;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class SpaController extends Controller
@@ -14,7 +15,8 @@ class SpaController extends Controller
      */
     public function index()
     {
-        //
+        $setting = Page::where('is_active', '1')->where('id', '5')->first();
+        return view('mobile.spa')->with(compact('setting'));
     }
 
     /**

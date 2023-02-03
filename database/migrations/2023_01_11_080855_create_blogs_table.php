@@ -26,6 +26,7 @@ return new class extends Migration
 
             $table->string('button_text')->nullable();
             $table->string('button_link')->nullable();
+            $table->string('min_night')->nullable();
 
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
