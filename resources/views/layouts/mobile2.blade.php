@@ -48,31 +48,31 @@
         <div class="container-fluid gx-0 menu">
             <div class="row row-cols-5 gx-1">
                 <div class="col text-center">
-                    <a href="https://elevatebali.com/m" class="menu-item @yield('home_active')">
+                    <a href="{{route('mindex')}}" class="menu-item @yield('home_active')">
                         <i class="fa fa-home"></i>
                         Home
                     </a>
                 </div>
                 <div class="col text-center">
-                    <a href="https://elevatebali.com/m/accommodations" class="menu-item @yield('villa_active')">
+                    <a href="{{route('mvilla')}}" class="menu-item @yield('villa_active')">
                         <i class="fa fa-bed"></i>
                         Accommodations
                     </a>
                 </div>
                 <div class="col text-center">
-                    <a href="https://elevatebali.com/m/offers" class="menu-item @yield('offer_active')">
+                    <a href="{{route('moffer')}}" class="menu-item @yield('offer_active')">
                         <i class="fa fa-tags"></i>
                         Offers
                     </a>
                 </div>
                 <div class="col text-center">
-                    <a href="https://elevatebali.com/m/gallery" class="menu-item @yield('gallery_active')">
+                    <a href="{{route('mgallery')}}" class="menu-item @yield('gallery_active')">
                         <i class="fa fa-image"></i>
                         Gallery
                     </a>
                 </div>
                 <div class="col text-center">
-                    <a href="https://elevatebali.com/m/contact" class="menu-item @yield('contact_active')">
+                    <a href="{{route('mcontact')}}" class="menu-item @yield('contact_active')">
                         <i class="fa fa-envelope"></i>
                         Contact
                     </a>

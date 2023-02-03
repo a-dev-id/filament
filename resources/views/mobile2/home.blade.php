@@ -18,47 +18,20 @@
 
 @section('home_active', 'active')
 
-@push('css')
-
-@endpush
-
-@push('js')
-
-@endpush
 <x-mobile2>
     <div class="wrapper ">
         <div class="position-relative">
             <div class="slider">
+
+                @foreach ($setting->images as $data)
                 <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/635/a26/129/635a26129b068712795381.jpg" class="img-fluid" alt="Elevate Bali">
+                    <img src="{{asset('storage/'.$data->image)}}" class="img-fluid" alt="{{ config('app.name').' - '.$data->title }}">
                 </div>
-                <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/624/be5/091/624be5091f441035854308.jpg" class="img-fluid" alt="Elevate Bali">
-                </div>
-                <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/635/b6a/0c4/635b6a0c48702775338517.jpg" class="img-fluid" alt="Elevate Bali">
-                </div>
-                <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/635/b6a/065/635b6a065a1f3171115290.jpg" class="img-fluid" alt="Elevate Bali">
-                </div>
-                <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/624/be5/043/624be50434fed251418719.jpg" class="img-fluid" alt="Elevate Bali">
-                </div>
-                <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/635/b6a/02b/635b6a02b669d605988326.jpg" class="img-fluid" alt="Elevate Bali">
-                </div>
-                <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/624/be5/0f2/624be50f2e6b9765726059.jpg" class="img-fluid" alt="Elevate Bali">
-                </div>
-                <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/635/b6a/00a/635b6a00a102d119272989.jpg" class="img-fluid" alt="Elevate Bali">
-                </div>
-                <div class="ratio ratio-4x3">
-                    <img src="https://elevatebali.com/storage/app/uploads/public/635/b6a/054/635b6a0549c15795993755.jpg" class="img-fluid" alt="Elevate Bali">
-                </div>
+                @endforeach
+
             </div>
             <div class="button-wrapper button-wrapper-home">
-                <a href="https://www.google.com/maps/dir/Current+Location/ELEVATE+BALI+by+HANGING+GARDENS+MUNDUK,+Munduk,+Kabupaten+Buleleng,+Bali" class="btn btn-outline-light border-2" target="_blank"><i class="fa fa-map-marker me-1"></i> Get Directions</a>
+                <a href="https://goo.gl/maps/zBod1yFj1YRMUBfm9" class="btn btn-outline-light border-2" target="_blank"><i class="fa fa-map-marker me-1"></i> Get Directions</a>
             </div>
             <div class="gradient-top"></div>
         </div>
@@ -114,8 +87,8 @@
                             </div>
                             <div class="col-12 h-90px">
                                 <div class="tiles">
-                                    <img src="https://elevatebali.com/themes/elevate/assets/images/maps.jpg" alt="Elevate Bali Maps">
-                                    <a href="https://www.google.com/maps/dir/Current+Location/ELEVATE+BALI+by+HANGING+GARDENS+MUNDUK,+Munduk,+Kabupaten+Buleleng,+Bali">Maps</a>
+                                    <img src="{{asset('images/maps.jpg')}}" alt="Elevate Bali Maps">
+                                    <a href="https://goo.gl/maps/zBod1yFj1YRMUBfm9">Maps</a>
                                 </div>
                             </div>
                         </div>

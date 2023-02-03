@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Mobile2;
 
 use App\Http\Controllers\Controller;
-use App\Models\Honeymoon;
+use App\Models\Dining;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
-class Honeymoon2Controller extends Controller
+class Dining2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class Honeymoon2Controller extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '17')->first();
-        $honeymoon_list = Honeymoon::where('is_active', '1')->get();
-        return view('mobile2.honeymoon')->with(compact('setting', 'honeymoon_list'));
+        $setting = Page::where('is_active', '1')->where('id', '4')->first();
+        $dining_list = Dining::where('is_active', '1')->get();
+        return view('mobile2.dining')->with(compact('setting', 'dining_list'));
     }
 
     /**

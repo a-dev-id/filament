@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Mobile2;
 
 use App\Http\Controllers\Controller;
+use App\Models\Page;
+use App\Models\Wedding;
 use Illuminate\Http\Request;
 
 class Wedding2Controller extends Controller
@@ -14,7 +16,9 @@ class Wedding2Controller extends Controller
      */
     public function index()
     {
-        //
+        $setting = Page::where('is_active', '1')->where('id', '6')->first();
+        $wedding_list = Wedding::where('is_active', '1')->get();
+        return view('mobile2.wedding')->with(compact('setting', 'wedding_list'));
     }
 
     /**

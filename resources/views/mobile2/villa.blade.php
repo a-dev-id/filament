@@ -18,13 +18,6 @@
 
 @section('villa_active', 'active')
 
-@push('css')
-
-@endpush
-
-@push('js')
-
-@endpush
 <x-mobile2>
     <div class="wrapper page">
         <div class="header-page fixed-top">

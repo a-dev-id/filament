@@ -3,7 +3,7 @@
 <meta name="description" content="{{ $setting->meta_description }}">
 <meta name="keywords" content="{{ implode(',', $setting->meta_keyword) }}">
 <title>{{ $setting->meta_title }}</title>
-<meta property="og:url" content="{{ route('mexperience') }}">
+<meta property="og:url" content="{{ route('mwedding') }}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ $setting->meta_title }}">
 <meta property="og:description" content="{{ $setting->meta_description }}">
@@ -13,7 +13,7 @@
 <meta name="twitter:description" content="{{ $setting->meta_description }}">
 <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<link rel="canonical" href="{{ route('mexperience') }}" />
+<link rel="canonical" href="{{ route('mwedding') }}" />
 @endsection
 
 <x-mobile2>
@@ -32,7 +32,7 @@
         </div>
         <div class="container-fluid activities py-2">
             <div class="row">
-                @foreach ($experience_list as $data)
+                @foreach ($wedding_list as $data)
                 <div class="col-12">
                     <div class="row gx-1 py-3 @if ($loop->last) @else border-bottom @endif">
                         <div class="col-5">
@@ -54,7 +54,7 @@
                             </div>
                             <div class="button-wrapper text-end">
                                 <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#{{$data->slug}}">View Details</button>
-                                <a href="mailto:reservations@nandinibali.com" class="btn btn-custom">Inquire Now</a>
+                                <a href="{{$data->button_link}}" class="btn btn-custom">{{$data->button_text}}</a>
                             </div>
                         </div>
                         <!-- Modal -->
@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="modal-footer button-wrapper">
                                         <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Close</button>
-                                        <a href="mailto:reservations@nandinibali.com" class="btn btn-custom">Inquire Now</a>
+                                        <a href="{{$data->button_link}}" class="btn btn-custom">{{$data->button_text}}</a>
                                     </div>
                                 </div>
                             </div>
