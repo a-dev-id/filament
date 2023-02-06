@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
-    <link rel="icon" type="image/png" href="https://elevatebali.com/storage/app/uploads/public/61a/85b/063/61a85b063d70a974563556.png">
+    <link rel="icon" type="image/png" href="{{ asset('images/nandini-icon.png') }}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/mobile2.css')}}">
 
     @stack('css')

@@ -56,4 +56,4 @@ Route::get('/m/spa', [App\Http\Controllers\Mobile2\Spa2Controller::class, 'index
 Route::get('/m/accommodations', [App\Http\Controllers\Mobile2\Villa2Controller::class, 'index'])->name('mvilla');
 Route::get('/m/wedding', [App\Http\Controllers\Mobile2\Wedding2Controller::class, 'index'])->name('mwedding');
 Route::get('/m/honeymoon', [App\Http\Controllers\Mobile2\Honeymoon2Controller::class, 'index'])->name('mhoneymoon');
-Route::get('/m/contact', [App\Http\Controllers\Mobile2\Contact2Controller::class, 'index'])->name('mcontact');
+Route::get('/m/contact', [App\Http\Controllers\Mobile2\ContactUs2Controller::class, 'index'])->name('mcontact');
