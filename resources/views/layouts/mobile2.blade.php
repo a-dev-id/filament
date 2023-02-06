@@ -35,7 +35,7 @@
         <div class="container-fluid check">
             <div class="row">
                 <div class="col-12">
-                    <a href="https://book-directonline.com/properties/elevatebalibyhanginggardendirect?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=IDR&checkInDate=2022-10-31&checkOutDate=2022-11-01&trackPage=no" class="check-item link-light" target="_blank">
+                    <a href="https://book-directonline.com/properties/nandinibalidirect?locale=en&currency=IDR&trackPage=yes" class="check-item link-light" target="_blank">
                         <span>
                             <i class="fa fa-calendar me-2"></i>
                             Check Availability

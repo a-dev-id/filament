@@ -22,9 +22,12 @@
     <div class="wrapper page">
         <div class="header-page fixed-top">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Contact Us</h1>
+                <div class="row gx-0">
+                    <div class="col-1">
+                        <a href="{{route('mindex')}}" class="link-dark"><i class="bi bi-chevron-left"></i></a>
+                    </div>
+                    <div class="col-11 ps-1">
+                        <h1>{{$setting->title}}</h1>
                     </div>
                 </div>
             </div>
