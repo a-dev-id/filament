@@ -33,6 +33,8 @@ Route::resource('/blog', App\Http\Controllers\Desktop\BlogController::class);
 Route::resource('/careers', App\Http\Controllers\Desktop\CareerController::class);
 Route::resource('/virtual-tour', App\Http\Controllers\Desktop\VirtualTourController::class);
 
+Route::resource('/inquiry', App\Http\Controllers\Desktop\InquiryController::class);
+
 // mobile
 // Route::get('/m', [App\Http\Controllers\Mobile\HomeController::class, 'index'])->name('mindex');
 // Route::get('/m/blog', [App\Http\Controllers\Mobile\BlogController::class, 'index'])->name('mblog');

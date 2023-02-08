@@ -6,6 +6,7 @@ use App\Filament\Resources\VillaResource\Pages;
 use App\Filament\Resources\VillaResource\RelationManagers\FacilitiesRelationManager;
 use App\Filament\Resources\VillaResource\RelationManagers\ImagesRelationManager;
 use App\Models\Facility;
+use App\Models\Keyword;
 use App\Models\Villa;
 use Closure;
 use Filament\Forms;
@@ -71,6 +72,9 @@ class VillaResource extends Resource
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('meta_description')
                                     ->maxLength(65535),
+                                Select::make('meta_keyword')
+                                    ->options(Keyword::all()->pluck('title', 'title'))
+                                    ->multiple(),
                             ]),
                         ])
                         ->collapsible()

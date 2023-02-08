@@ -11,6 +11,10 @@ class Villa extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'meta_keyword' => 'array',
+    ];
+
     protected $fillable = [
         'title',
         'slug',
@@ -25,6 +29,7 @@ class Villa extends Model
         'per',
         'meta_title',
         'meta_description',
+        'meta_keyword',
         'is_active',
     ];
 
