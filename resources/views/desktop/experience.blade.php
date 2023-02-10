@@ -92,17 +92,17 @@
                                             @endif
                                         </div>
                                         <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
-                                            <button type="button" class="btn btn-primary text-uppercase w-100 py-2 fw-bold rounded-0 small" data-bs-toggle="modal" data-bs-target="#{{'experience'.$data->id}}">
+                                            <button type="button" class="btn btn-primary text-uppercase w-100 py-2 fw-bold rounded-0 small" data-bs-toggle="modal" data-bs-target="#{{'modalinquiry'.$data->id}}">
                                                 {{ $data->button_text }}
                                             </button>
 
                                             <!-- Modal -->
-                                            <div class="modal fade" id="{{'experience'.$data->id}}" tabindex="-1" aria-labelledby="{{'experience'.$data->id}}Label" aria-hidden="true">
+                                            <div class="modal fade" id="{{'modalinquiry'.$data->id}}" tabindex="-1" aria-labelledby="{{'modalinquiry'.$data->id}}Label" aria-hidden="true">
                                                 <form class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" method="post" action="{{route('inquiry.store')}}">
                                                     @csrf
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h2 class="modal-title text-uppercase" id="{{'experience'.$data->id}}Label">Inquiry Form</h2>
+                                                            <h2 class="modal-title text-uppercase" id="{{'modalinquiry'.$data->id}}Label">Inquiry Form</h2>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
@@ -424,7 +424,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary text-uppercase rounded-0 px-5 fw-bold" data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary text-uppercase rounded-0 px-5 fw-bold">Inquire Now</button>
+                                                            <button type="submit" class="btn btn-primary text-uppercase rounded-0 px-5 fw-bold">Inquire Now</button>
                                                         </div>
                                                     </div>
                                                 </form>

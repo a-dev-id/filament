@@ -53,19 +53,24 @@ class InquiryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('package_title'),
-                Tables\Columns\TextColumn::make('full_name'),
-                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('full_name')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('country'),
-                Tables\Columns\TextColumn::make('phone'),
+                Tables\Columns\TextColumn::make('phone')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('package_title')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('date')
+                    ->label('Booking Date')
+                    ->sortable()
                     ->date(),
                 Tables\Columns\TextColumn::make('message'),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-            ])
+                    ->dateTime()
+            ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])

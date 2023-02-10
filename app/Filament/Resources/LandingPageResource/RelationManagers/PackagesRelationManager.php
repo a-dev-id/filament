@@ -1,21 +1,17 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\LandingPageResource\RelationManagers;
 
-use App\Filament\Resources\LandingPageResource\Pages;
-use App\Filament\Resources\LandingPageResource\RelationManagers;
-use App\Filament\Resources\LandingPageResource\RelationManagers\PackagesRelationManager;
-use App\Models\LandingPage;
 use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
-use Filament\Resources\Resource;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
@@ -24,13 +20,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
-class LandingPageResource extends Resource
+class PackagesRelationManager extends RelationManager
 {
-    protected static ?string $model = LandingPage::class;
+    protected static string $relationship = 'Packages';
 
-    protected static ?int $navigationSort = 1;
-    protected static ?string $navigationGroup = 'Advance';
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Form $form): Form
     {
@@ -39,18 +33,10 @@ class LandingPageResource extends Resource
                 Grid::make()->schema([
                     Section::make('General')
                         ->schema([
-                            Grid::make(2)->schema([
+                            Grid::make(1)->schema([
                                 Forms\Components\TextInput::make('title')
                                     ->required()
-                                    ->maxLength(191)
-                                    ->reactive()
-                                    ->afterStateUpdated(function (Closure $set, $state) {
-                                        $set('slug', Str::slug($state));
-                                    }),
-                                Forms\Components\TextInput::make('slug')
                                     ->maxLength(191),
-                            ]),
-                            Grid::make(1)->schema([
                                 Forms\Components\TextInput::make('subtitle')
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('excerpt')
@@ -60,13 +46,12 @@ class LandingPageResource extends Resource
                         ])
                         ->collapsible()
                         ->compact(),
-
                 ])->columnSpan(2),
+
                 Grid::make()->schema([
                     Section::make('Image')
                         ->schema([
-                            Grid::make(2)->schema([
-                                FileUpload::make('banner_image')->label('Header Image'),
+                            Grid::make(1)->schema([
                                 FileUpload::make('cover_image')->label('Cover Image'),
                             ]),
                         ])
@@ -82,12 +67,24 @@ class LandingPageResource extends Resource
                                 Forms\Components\TextInput::make('button_link')
                                     ->maxLength(191)
                                     ->label('Link'),
+                                Forms\Components\TextInput::make('price')
+                                    ->maxLength(191)
+                                    ->label('Price'),
+                                Forms\Components\TextInput::make('per')
+                                    ->maxLength(191)
+                                    ->label('Per'),
+                                Forms\Components\TextInput::make('min_night')
+                                    ->maxLength(191)
+                                    ->label('Minimum Night'),
+                                Forms\Components\TextInput::make('min_person')
+                                    ->maxLength(191)
+                                    ->label('Minimum Person'),
                             ]),
-                            // Grid::make(2)->schema([
-                            //     Forms\Components\TextInput::make('price')
-                            //         ->maxLength(191),
-                            //     TextInput::make('per')
-                            // ]),
+                            Grid::make(1)->schema([
+                                Forms\Components\TextInput::make('promo_code')
+                                    ->maxLength(191),
+                                TextInput::make('Promo Code')
+                            ]),
                             Grid::make(1)->schema([
                                 Toggle::make('is_active')
                                     ->label('Publish')
@@ -98,17 +95,18 @@ class LandingPageResource extends Resource
                         ])
                         ->collapsible()
                         ->compact(),
-                ])->columnSpan(1),
-            ])->columns(3);
+                ])->columnSpan(2),
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                ImageColumn::make('banner_image')->square()->label('Image'),
-                Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('is_active')->label('Published'),
+                ImageColumn::make('cover_image')
+                    ->label('Image')
+                    ->square(),
+                Tables\Columns\TextColumn::make('title'),
                 IconColumn::make('is_active')->label('Published')
                     ->options([
                         'heroicon-o-x-circle' => 0,
@@ -122,27 +120,15 @@ class LandingPageResource extends Resource
             ->filters([
                 //
             ])
+            ->headerActions([
+                Tables\Actions\CreateAction::make(),
+            ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            PackagesRelationManager::class,
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ListLandingPages::route('/'),
-            'create' => Pages\CreateLandingPage::route('/create'),
-            'edit' => Pages\EditLandingPage::route('/{record}/edit'),
-        ];
     }
 }

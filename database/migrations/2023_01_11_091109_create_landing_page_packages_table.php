@@ -26,6 +26,12 @@ return new class extends Migration
             $table->string('button_text')->nullable();
             $table->string('button_link')->nullable();
 
+            $table->string('price')->nullable();
+            $table->string('per')->nullable();
+            $table->string('min_night')->nullable();
+            $table->string('min_person')->nullable();
+            $table->string('promo_code')->nullable();
+
             $table->integer('is_active');
             $table->timestamps();
         });

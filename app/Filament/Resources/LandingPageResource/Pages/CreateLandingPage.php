@@ -10,8 +10,8 @@ class CreateLandingPage extends CreateRecord
 {
     protected static string $resource = LandingPageResource::class;
 
-    protected function getRedirectUrl(): string
-    {
-        return $this->getResource()::getUrl('index');
-    }
+    // protected function getRedirectUrl(): string
+    // {
+    //     return $this->getResource()::getUrl('index');
+    // }
 }

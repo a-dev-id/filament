@@ -38,7 +38,7 @@
 
 <x-desktop>
     <section class="vh-100">
-        <img src="{{ asset('storage/' . $setting->banner_image) }}" alt="{{ $setting->title }}" class="h-100 w-100 object-fit-cover object-position-center">
+        <img src="{{ asset('storage/'.$setting->banner_image) }}" alt="{{ $setting->title }}" class="h-100 w-100 object-fit-cover object-position-center">
     </section>
 
     <section class="py-90">
@@ -85,12 +85,13 @@
                                             @endif
                                         </div>
                                         <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
-                                            <form id="enquiryForm-6" method="post" action="https://nandinibali.com/enquiry" class="w-100">
-                                                <input type="hidden" name="package_name" value="{{ $data->title }}">
-                                                <input type="hidden" name="package_excerpt" value="{{ $data->excerpt }}">
-                                                <input type="hidden" name="package_image" value="{{ asset('storage/' . $data->banner_image) }}">
-                                                <button type="submit" class="btn btn-primary text-uppercase w-100 py-2 fw-bold rounded-0 small">{{ $data->button_text }}</button>
-                                            </form>
+                                            @if ($data->min_night == !null)
+                                            <a href="https://book-directonline.com/properties/nandinibalidirect?locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD&trackPage=yes" class="btn btn-primary text-uppercase w-100 py-2 fw-bold rounded-0 small" target="_blank">{{$data->button_text}}</a>
+                                            @elseif ($data->button_text == "Learn More")
+                                            <a href="{{$data->button_link}}?text=Hi, I would like to Book: *Special Offer - {{ $data->title }}*" class="btn btn-primary text-uppercase w-100 py-2 fw-bold rounded-0 small" target="_blank">{{$data->button_text}}</a>
+                                            @else
+                                            <a href="{{$data->button_link}}" class="btn btn-primary text-uppercase w-100 py-2 fw-bold rounded-0 small" target="_blank">{{$data->button_text}}</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

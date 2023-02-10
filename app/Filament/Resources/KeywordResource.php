@@ -19,7 +19,7 @@ class KeywordResource extends Resource
 {
     protected static ?string $model = Keyword::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-key';
     protected static ?int $navigationSort = 13;
     protected static ?string $navigationGroup = 'Setting';
 

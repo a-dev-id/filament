@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Desktop;
 
 use App\Http\Controllers\Controller;
-use App\Mail\InquiryMail;
-use App\Models\Inquiry;
+use App\Models\Page;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
-class InquiryController extends Controller
+class ThankYouController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,8 @@ class InquiryController extends Controller
      */
     public function index()
     {
-        //
+        $setting = Page::where('is_active', '1')->where('id', '18')->first();
+        return view('desktop.thank-you')->with(compact('setting'));
     }
 
     /**
@@ -38,32 +37,7 @@ class InquiryController extends Controller
      */
     public function store(Request $request)
     {
-        Inquiry::create([
-            'package_title' => $request->package_title,
-            'package_excerpt' => $request->package_excerpt,
-            'package_price' => $request->package_price,
-            'package_per' => $request->package_per,
-            'full_name' => $request->full_name,
-            'email' => $request->email,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'date' => $request->date,
-            'message' => $request->message,
-        ]);
-
-
-        $mailData = [
-            'package_title' => $request->package_title,
-            'full_name' => $request->full_name,
-            'phone' => $request->phone,
-            'date' => $request->date,
-            'message' => $request->message,
-        ];
-
-        Mail::to($request->email)
-            // ->bcc('info@nandinibali.com', 'reservation@nandinibali.com')
-            ->send(new InquiryMail($mailData));
-        return redirect()->route('thank-you.index');
+        //
     }
 
     /**

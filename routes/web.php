@@ -34,6 +34,7 @@ Route::resource('/careers', App\Http\Controllers\Desktop\CareerController::class
 Route::resource('/virtual-tour', App\Http\Controllers\Desktop\VirtualTourController::class);
 
 Route::resource('/inquiry', App\Http\Controllers\Desktop\InquiryController::class);
+Route::resource('/thank-you', App\Http\Controllers\Desktop\ThankYouController::class);
 
 // mobile
 // Route::get('/m', [App\Http\Controllers\Mobile\HomeController::class, 'index'])->name('mindex');
