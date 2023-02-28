@@ -38,12 +38,12 @@
                     {{-- <h6 class="text-muted mb-4">Posted on Jan 11, 2023</h6> --}}
                     {!! $blog_detail->description !!}
 
-                    @if ($blog_detail->min_night == !null)
+                    @if ($blog_detail->button_text == "Book Now")
                     <a href="https://book-directonline.com/properties/nandinibalidirect?locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$blog_detail->min_night.' days'))}}&currency=USD&trackPage=yes" class="btn btn-primary text-uppercase py-3 fw-bold rounded-0" target="_blank">{{$blog_detail->button_text}}</a>
                     @elseif ($blog_detail->button_text == "Learn More")
                     <a href="{{$blog_detail->button_link}}?text=Hi, I would like to Book: *Special Offer - {{ $blog_detail->title }}*" class="btn btn-primary text-uppercase py-3 fw-bold rounded-0" target="_blank">{{$blog_detail->button_text}}</a>
                     @else
-                    <a href="{{$blog_detail->button_link}}" class="btn btn-primary text-uppercase py-3 fw-bold rounded-0" target="_blank">{{$blog_detail->button_text}}</a>
+                    {{-- <a href="{{$blog_detail->button_link}}" class="btn btn-primary text-uppercase py-3 fw-bold rounded-0" target="_blank">{{$blog_detail->button_text}}</a> --}}
                     @endif
 
                 </div>

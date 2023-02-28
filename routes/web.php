@@ -29,7 +29,11 @@ Route::resource('/story', App\Http\Controllers\Desktop\StoryController::class);
 Route::resource('/awards', App\Http\Controllers\Desktop\AwardController::class);
 Route::resource('/videos', App\Http\Controllers\Desktop\VideoController::class);
 Route::resource('/day-guest', App\Http\Controllers\Desktop\DayGuestController::class);
-Route::resource('/blog', App\Http\Controllers\Desktop\BlogController::class);
+
+// Route::resource('/blog', App\Http\Controllers\Desktop\BlogController::class);
+Route::get('/blog', [App\Http\Controllers\Desktop\BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/post/{slug}', [App\Http\Controllers\Desktop\BlogController::class, 'show'])->name('blog.show');
+
 Route::resource('/careers', App\Http\Controllers\Desktop\CareerController::class);
 Route::resource('/virtual-tour', App\Http\Controllers\Desktop\VirtualTourController::class);
 

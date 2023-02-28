@@ -60,7 +60,7 @@
                                     @if ($data->min_night == null)
                                     <a href="{{$data->button_link}}" target="_blank" class="btn btn-custom">{{$data->button_text}}</a>
                                     @else
-                                    <a href="https://book-directonline.com/properties/nandinibalidirect?locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD&trackPage=yes" target="_blank" class="btn btn-custom">{{$data->button_text}}</a>
+                                    <a href="https://book-directonline.com/properties/nandinibalidirect?promocode={{$data->promo_code}}&locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD&trackPage=yes" target="_blank" class="btn btn-custom">{{$data->button_text}}</a>
                                     @endif
                                 </div>
                             </div>

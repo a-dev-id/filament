@@ -1,19 +1,19 @@
 @section('meta')
-    <meta name="title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-    <meta name="description" content="{{ $setting->meta_description }}">
-    <meta name="keywords" content="{{ implode(',', $setting->meta_keyword) }}">
-    <title>{{ $setting->meta_title }}</title>
-    <meta property="og:url" content="{{ route('spa.index') }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-    <meta property="og:description" content="{{ $setting->meta_description }}">
-    <meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
+<meta name="title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta name="description" content="{{ $setting->meta_description }}">
+<meta name="keywords" content="{{ implode(',', $setting->meta_keyword) }}">
+<title>{{ $setting->meta_title }}</title>
+<meta property="og:url" content="{{ route('spa.index') }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta property="og:description" content="{{ $setting->meta_description }}">
+<meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-    <meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
-    <meta name="twitter:description" content="{{ $setting->meta_description }}">
-    <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
+<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta name="twitter:description" content="{{ $setting->meta_description }}">
+<meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-    <link rel="canonical" href="{{ route('spa.index') }}" />
+<link rel="canonical" href="{{ route('spa.index') }}" />
 @endsection
 
 @push('css')
@@ -47,8 +47,13 @@
                     </p>
                 </div>
                 <div class="mt-1">
-                    <a href="/storage/app/media/spa-menu.pdf" download="spa-menu" class="btn btn-sm btn-outline-primary text-uppercase py-2 px-3 rounded-0"><i class="fa fa-download me-2"></i> View Menu</a>
-                    <a href="https://wa.me/6281236871170" class="btn btn-primary text-uppercase py-2 fw-bold rounded-0 small"> Reserve Now</a>
+                    @foreach ($setting->CustomFields as $data)
+                    @if ($data->is_active == '1' && $data->id == '40')
+                    <a href="{{$data->button_link}}" class="btn btn-sm btn-outline-primary text-uppercase py-2 px-3 rounded-0" target="_blank"><i class="fa fa-download me-2"></i> {{$data->button_text}}</a>
+                    @else
+                    @endif
+                    @endforeach
+                    <a href="{{$setting->button_link}}" class="btn btn-primary text-uppercase py-2 fw-bold rounded-0 small" target="_blank"> {{$setting->button_text}}</a>
                 </div>
             </div>
             <div class="col-12 col-md-8 ps-5">
@@ -69,9 +74,9 @@
             <div class="row g-0">
 
                 @foreach ($setting->images as $data)
-                    <div class="col-6 col-md-2">
-                        <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $setting->title . ' - ' . $data->title }}" class="w-100 img-hover">
-                    </div>
+                <div class="col-6 col-md-2">
+                    <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $setting->title . ' - ' . $data->title }}" class="w-100 img-hover">
+                </div>
                 @endforeach
 
             </div>

@@ -3,7 +3,7 @@
 <meta name="description" content="{{ $setting->meta_description }}">
 <meta name="keywords" content="{{ implode(',', $setting->meta_keyword) }}">
 <title>{{ $setting->meta_title }}</title>
-<meta property="og:url" content="{{ route('360-virtual-tour.index') }}">
+<meta property="og:url" content="{{ route('virtual-tour.index') }}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
 <meta property="og:description" content="{{ $setting->meta_description }}">
@@ -13,7 +13,7 @@
 <meta name="twitter:description" content="{{ $setting->meta_description }}">
 <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<link rel="canonical" href="{{ route('360-virtual-tour.index') }}" />
+<link rel="canonical" href="{{ route('virtual-tour.index') }}" />
 @endsection
 
 @push('css')

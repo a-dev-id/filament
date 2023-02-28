@@ -29,6 +29,7 @@ return new class extends Migration
 
             $table->string('price')->nullable();
             $table->string('per')->nullable();
+            $table->string('promo_code')->nullable();
             $table->string('min_night')->nullable();
 
             $table->string('meta_title')->nullable();

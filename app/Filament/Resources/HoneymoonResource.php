@@ -94,10 +94,12 @@ class HoneymoonResource extends Resource
                             Grid::make(2)->schema([
                                 Forms\Components\TextInput::make('price')
                                     ->maxLength(191),
-                                TextInput::make('per')
+                                TextInput::make('per'),
+                                TextInput::make('min_night')->label('Minimum Night(s)'),
+                                TextInput::make('promo_code'),
                             ]),
                             Grid::make(1)->schema([
-                                TextInput::make('min_night')->label('Minimum Night'),
+
                                 Toggle::make('is_active')
                                     ->label('Publish')
                                     ->inline(false)

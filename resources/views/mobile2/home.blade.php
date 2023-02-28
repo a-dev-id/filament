@@ -65,14 +65,14 @@
                         <div class="row g-1">
                             <div class="col-12 h-90px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$villa->banner_image)}}" alt="Elevate Bali - {{$villa->title}}">
-                                    <a href="{{route('mvilla')}}">{{$villa->title}}</a>
+                                    <img src="{{asset('storage/'.$villa->banner_image)}}" alt="{{$villa->page_name}}">
+                                    <a href="{{route('mvilla')}}">{{$villa->page_name}}</a>
                                 </div>
                             </div>
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$experience->banner_image)}}" alt="Elevate Bali - {{$experience->title}}">
-                                    <a href="{{route('mexperience')}}">{{$experience->title}}</a>
+                                    <img src="{{asset('storage/'.$experience->banner_image)}}" alt="{{$experience->page_name}}">
+                                    <a href="{{route('mexperience')}}">{{$experience->page_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -81,13 +81,13 @@
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$offer->banner_image)}}" alt="Elevate Bali - {{$offer->title}}">
-                                    <a href="{{route('moffer')}}">{{$offer->title}}</a>
+                                    <img src="{{asset('storage/'.$offer->banner_image)}}" alt="{{$offer->page_name}}">
+                                    <a href="{{route('moffer')}}">{{$offer->page_name}}</a>
                                 </div>
                             </div>
                             <div class="col-12 h-90px">
                                 <div class="tiles">
-                                    <img src="{{asset('images/maps.jpg')}}" alt="Elevate Bali Maps">
+                                    <img src="{{asset('images/maps.jpg')}}" alt="Nandini Bali Maps">
                                     <a href="https://goo.gl/maps/zBod1yFj1YRMUBfm9">Maps</a>
                                 </div>
                             </div>
@@ -97,8 +97,8 @@
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$dining->banner_image)}}" alt="Elevate Bali - {{$dining->title}}">
-                                    <a href="{{route('mdining')}}">{{$dining->title}}</a>
+                                    <img src="{{asset('storage/'.$dining->banner_image)}}" alt="{{$dining->page_name}}">
+                                    <a href="{{route('mdining')}}">{{$dining->page_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -107,8 +107,8 @@
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$wedding->banner_image)}}" alt="Elevate Bali - {{$wedding->title}}">
-                                    <a href="{{route('mwedding')}}">{{$wedding->title}}</a>
+                                    <img src="{{asset('storage/'.$wedding->banner_image)}}" alt="{{$wedding->page_name}}">
+                                    <a href="{{route('mwedding')}}">{{$wedding->page_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -117,8 +117,8 @@
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$blog->banner_image)}}" alt="Elevate Bali - {{$honeymoon->title}}">
-                                    <a href="{{route('mhoneymoon')}}">{{$honeymoon->title}}</a>
+                                    <img src="{{asset('storage/'.$honeymoon->banner_image)}}" alt="{{$honeymoon->page_name}}">
+                                    <a href="{{route('mhoneymoon')}}">{{$honeymoon->page_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -127,8 +127,8 @@
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$blog->banner_image)}}" alt="Elevate Bali - {{$blog->title}}">
-                                    <a href="{{route('mblog')}}">{{$blog->title}}</a>
+                                    <img src="{{asset('storage/'.$blog->banner_image)}}" alt="{{$blog->page_name}}">
+                                    <a href="{{route('mblog')}}">{{$blog->page_name}}</a>
                                 </div>
                             </div>
                         </div>

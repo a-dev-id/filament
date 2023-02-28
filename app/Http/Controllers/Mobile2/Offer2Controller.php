@@ -17,7 +17,7 @@ class Offer2Controller extends Controller
     public function index()
     {
         $setting = Page::where('is_active', '1')->where('id', '16')->first();
-        $offer_list = Offer::where('is_active', '1')->get();
+        $offer_list = Offer::where('is_active', '1')->latest()->get();
         return view('mobile2.offer')->with(compact('setting', 'offer_list'));
     }
 

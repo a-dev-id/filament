@@ -63,19 +63,19 @@
                             <input type="hidden" name="propertyId" value="9897">
                             <div class="col px-1 position-relative h-100">
                                 <label class="booking-field-text">Arrival</label>
-                                <input type="text" class="form-control booking-field-input h-100 w-100 datepicker" id="fromDate" value="16-01-2023" readonly="true">
+                                <input type="text" class="form-control booking-field-input h-100 w-100 datepicker" id="fromDate" value="{{date('d-m-Y')}}" readonly="true">
                                 <i class="fa fa-calendar booking-field-icon"></i>
-                                <input type="hidden" name="checkInDate" class="datepicker-input" value="2023-01-16">
+                                <input type="hidden" name="checkInDate" class="datepicker-input" value="{{date('d-m-Y')}}">
                             </div>
                             <div class="col px-1 position-relative h-100">
                                 <label class="booking-field-text">Departure</label>
-                                <input type="text" class="form-control booking-field-input h-100 w-100 datepicker" id="toDate" value="17-01-2023" readonly="true">
+                                <input type="text" class="form-control booking-field-input h-100 w-100 datepicker" id="toDate" value="{{date('d-m-Y',strtotime('+2 days'))}}" readonly="true">
                                 <i class="fa fa-calendar booking-field-icon"></i>
-                                <input type="hidden" name="checkOutDate" class="datepicker-input" value="2023-01-17">
+                                <input type="hidden" name="checkOutDate" class="datepicker-input" value="{{date('d-m-Y',strtotime('+2 days'))}}">
                             </div>
                             <div class="col px-1 position-relative h-100">
                                 <label class="booking-field-text">Guests</label>
-                                <select class="form-control booking-field-input h-100 w-100">
+                                <select class="form-control booking-field-input h-100 w-100" name="items[0][adults]">
                                     <option value="1">01</option>
                                     <option value="2">02</option>
                                     <option value="3">03</option>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="col px-1 position-relative h-100">
                                 <label class="booking-field-text">Promo code</label>
-                                <input type="text" class="form-control booking-field-input h-100 w-100" name="ccode" placeholder="...">
+                                <input type="text" class="form-control booking-field-input h-100 w-100" name="promocode" placeholder="...">
                                 <i class="fa fa-tag booking-field-icon"></i>
                             </div>
                             <div class="col px-1 position-relative h-100">
@@ -493,12 +493,12 @@
         }
         $('#fromDate').datepicker({
             format: 'dd-mm-yyyy',
-            startDate: "16-01-2023",
+            startDate: "{{date('d-m-Y')}}",
             autoclose: true
         });
         $('#toDate').datepicker({
             format: 'dd-mm-yyyy',
-            startDate: "17-01-2023",
+            startDate: "{{date('d-m-Y',strtotime('+2 days'))}}",
             autoclose: true
         });
         $('#fromDate, #toDate').change(function(e) {
@@ -528,7 +528,7 @@
             });
         });
     </script>
-    {!! $footer->script !!}
+    {!! $footer->script ?? '' !!}
     @stack('js')
 </body>
 

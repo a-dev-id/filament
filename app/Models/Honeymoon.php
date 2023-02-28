@@ -22,6 +22,7 @@ class Honeymoon extends Model
         'button_link',
         'price',
         'per',
+        'promo_code',
         'min_night',
         'meta_title',
         'meta_description',

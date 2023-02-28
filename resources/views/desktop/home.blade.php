@@ -289,7 +289,7 @@
                             @if ($data->min_night == !null)
                             <a href="https://book-directonline.com/properties/nandinibalidirect?locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD&trackPage=yes" class="btn btn-primary text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
                             @elseif ($data->button_text == "Learn More")
-                            <a href="{{$data->button_link}}?text=Hi, I would like to Book: *Special Offer - {{ $data->title }}*" class="btn btn-primary text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
+                            <a href="{{$data->button_link}}?text=Hi, I would like to Book: Special Offer - {{$data->title}}" class="btn btn-primary text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
                             @else
                             <a href="{{$data->button_link}}" class="btn btn-primary text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
                             @endif
