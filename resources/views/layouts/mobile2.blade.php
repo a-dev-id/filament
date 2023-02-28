@@ -88,6 +88,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="{{asset('js/mobile2.js')}}"></script>
 
+    <script type="text/javascript">
+        if (screen.width > 768) {
+                window.location = "{{route('index')}}";
+              }
+    </script>
     @stack('js')
 
 </body>
